@@ -1,0 +1,8 @@
+PANDOC=pandoc
+INPUTFILE=README.md
+OUTPUTFILE=docs.pdf
+
+all : $(INPUTFILE)
+	$(PANDOC) $(INPUTFILE) -o $(OUTPUTFILE)
+
+
