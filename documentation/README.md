@@ -1,6 +1,8 @@
 # A Brief CCEAP Documentation
 
-*v. 0.1 by Dr. Steffen Wendzel*
+*v. 0.1.1 by Dr. Steffen Wendzel*
+
+(**Note:** An initial academic publication is currently under review for a conference; it provides more information on the matter and will be linked here as soon as it will be published.)
 
 The *Covert Channel Educational Analysis Protocol* (CCEAP) is a network protocol designed for teaching covert channels to professionals and students.
 
@@ -21,7 +23,7 @@ The lecturing part is split into two parts. First, fundamentals are explained an
 #### 1. Preparing Students to Use CCEAP
 
 The lecturer has to introduce
-- the CCEAP protocol (**Note:** Initial publication under review for a conference; it will be released after acceptance), and
+- the CCEAP protocol (cf. below), and
 - Hiding patterns as they are described on our [network information hiding patterns website](http://ih-patterns.blogspot.de/p/introduction.html) that also points to several of our recent publications in which we introduce the topic.
 
 #### 2. Exercises
@@ -32,7 +34,41 @@ In the exercises, students should try create covert channels or determine the ty
 - Alternatively, the lecturer can ask the students to *determine the hiding pattern for a given traffic recording or for given tool parameters* that were used to run the client.
 
 
-## Architecture and User-Guide
+## CCEAP Protocol
+
+The protocol contains two components: A CCEAP main header and options headers (between 0-128). The options headers will be concatenated to the main header.
+
+#### Main Header
+
+The main header contains three words. The first contains a *Sequence Number* (8 bit), the indicator of how many options headers are attached (*Number of Options*, 8 bits), the length of the destination address in bytes (*Destination Length*, 8 bits) and an unused *Dummy* field (8 bits). The following two words contain the destination address (an ASCII value) that is padded with X bytes if short.
+
+```
++-----------------------------------+
+| Seq.No.| Number | Dest.  | Dummy  |
+|        | Options| Length |(Unused)|
++-----------------------------------+
+| Destination Address and Padding   |
+| (Word 1)                          |
++-----------------------------------+
+| Destination Address and Padding   |
+| (Word 1)                          |
++-----------------------------------+
+```
+
+The sequence number is incremental and starts with 1 by default. The number of options is zero by default.
+
+#### Options Headers
+
+The options headers contains a freely definable *Identifier*, *Type* and *Value* field (each 8 bits) and another *Dummy* field (also 8 bit).
+
+```
++-----------------------------------+
+| Identi-| Type   | Value  | Dummy  |
+| fier   |        |        |(Unused)|
++-----------------------------------+
+```
+
+## Tool Architecture and User-Guide
 
 The implementation of the CCEAP protocol is split into two components, a client and a server. The client transfers CCEAP protocol packets to the server. Users can freely define how the particular fields of the CCEAP header are filled and how optional header components are embedded. The server, on the other hand, simply displays the received content which allows to view whether packet data were transmitted in the desired way.
 
@@ -90,7 +126,3 @@ received data (12 bytes):
 ```
 
 More complex outputs will be provided when more complex packets are transferred, e.g. those containing optional headers.
-
-## To-dos
-
-- Explain CCEAP header structure
