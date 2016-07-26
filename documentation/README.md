@@ -1,10 +1,10 @@
 # A Brief CCEAP Documentation
 
-*v. 0.1.1 by Dr. Steffen Wendzel*
+*v. 0.1.2 by Dr. Steffen Wendzel*
 
-(**Note:** An initial academic publication is currently under review for a conference; it provides more information on the matter and will be linked here as soon as it will be published.)
+(**Note:** An initial academic publication is currently under review for a conference; it provides more information on CCEAP and will be linked here in case of acceptance and publication.)
 
-The *Covert Channel Educational Analysis Protocol* (CCEAP) is a network protocol designed for teaching covert channels to professionals and students.
+The *Covert Channel Educational Analysis Protocol* (CCEAP) is a network protocol designed for teaching covert channels to professionals and students. For an introduction on network covert channels (network steganography), please have a look at [this publication](https://www.researchgate.net/profile/Steffen_Wendzel/publication/263773592_Hidden_and_Uncontrolled_-_On_the_Emergence_of_Network_Steganographic_Threats/links/53eb38eb0cf2dc24b3cea87a.pdf).
 
 The protocol is explicitly vulnerable against several [hiding patterns](http://ih-patterns.blogspot.de/p/introduction.html) so that switching protocols while explaining hiding patterns is not necessary. The protocol's structure is simple and self-explanatory and its implementation is kept at a minimum level of code lines to make it especially accessible to students.
 
@@ -18,19 +18,19 @@ The tool requires gcc and Linux (or similar). Run `make` to build the two compon
 
 ## Teaching Process in a Nutshell
 
-The lecturing part is split into two parts. First, fundamentals are explained and secondly, exercises are performed and evaluated.
+The educational process is split into two parts. First, fundamentals are explained, secondly, exercises are performed and evaluated.
 
 #### 1. Preparing Students to Use CCEAP
 
 The lecturer has to introduce
-- the CCEAP protocol (cf. below), and
+- the CCEAP protocol (see below), and
 - Hiding patterns as they are described on our [network information hiding patterns website](http://ih-patterns.blogspot.de/p/introduction.html) that also points to several of our recent publications in which we introduce the topic.
 
 #### 2. Exercises
 
-In the exercises, students should try create covert channels or determine the type for a given covert channel. Therefore, the lecturer can perform one of two exercises:
+In the exercises, students should try to create covert channels **or** should try to determine the type (pattern) of a given covert channel. Therefore, the lecturer can perform one of two exercises:
 
-- The lecturer can ask the *students establish a hidden communication that represents a given pattern*. The pattern can be one of the known patterns of the available [pattern collection](http://ih-patterns.blogspot.de/p/test.html), e.g. [ValueModulation](http://ih-patterns.blogspot.de/p/references-1-s.html) or [Reserved/Unused](http://ih-patterns.blogspot.de/p/blog-page_13.html). Therefore, the students need to find out how to create a covert channel for the particular pattern using the CCEAP protocol by analyzing the protocol structure and the `client` tool's command line parameters.
+- The lecturer can ask the *students to establish a hidden communication that represents a given pattern*. The pattern can be one of the known patterns of the available [pattern collection](http://ih-patterns.blogspot.de/p/test.html), e.g. [ValueModulation](http://ih-patterns.blogspot.de/p/references-1-s.html) or [Reserved/Unused](http://ih-patterns.blogspot.de/p/blog-page_13.html). Therefore, the students need to find out how to create a covert channel for the particular pattern using the CCEAP protocol by analyzing the protocol structure and the `client` tool's command line parameters.
 - Alternatively, the lecturer can ask the students to *determine the hiding pattern for a given traffic recording or for given tool parameters* that were used to run the client.
 
 
@@ -40,9 +40,10 @@ The protocol contains two components: A CCEAP main header and options headers (b
 
 #### Main Header
 
-The main header contains three words. The first contains a *Sequence Number* (8 bit), the indicator of how many options headers are attached (*Number of Options*, 8 bits), the length of the destination address in bytes (*Destination Length*, 8 bits) and an unused *Dummy* field (8 bits). The following two words contain the destination address (an ASCII value) that is padded with X bytes if short.
+The main header contains three words. The first contains a *Sequence Number* (8 bit), the indicator of how many options headers are attached (*Number of Options*, 8 bits), the length of the destination address in bytes (*Destination Length*, 8 bits) and an unused *Dummy* field (8 bits). The following two words contain the destination address (an ASCII value) that is padded with `X` bytes if too short for two words.
 
 ```
+0       8        16       24       32
 +-----------------------------------+
 | Seq.No.| Number | Dest.  | Dummy  |
 |        | Options| Length |(Unused)|
@@ -55,13 +56,14 @@ The main header contains three words. The first contains a *Sequence Number* (8 
 +-----------------------------------+
 ```
 
-The sequence number is incremental and starts with 1 by default. The number of options is zero by default.
+The sequence number is incremental and starts with 1 by default (this can all be configured!). The number of options is zero by default.
 
 #### Options Headers
 
-The options headers contains a freely definable *Identifier*, *Type* and *Value* field (each 8 bits) and another *Dummy* field (also 8 bit).
+The options header contains a freely definable *Identifier*, *Type* and *Value* field (8 bits each) and another *Dummy* field (also 8 bit).
 
 ```
+0       8        16       24       32
 +-----------------------------------+
 | Identi-| Type   | Value  | Dummy  |
 | fier   |        |        |(Unused)|
@@ -108,7 +110,7 @@ Please note that the `-v` parameter provides verbose output for the client and f
 Next, the students run the client and connect to localhost (127.0.0.1), port 2222. They set the value of the Dummy field to 42:
 
 ```
-$./client -D 127.0.0.1 -P 2222 -u 42
+$ ./client -D 127.0.0.1 -P 2222 -u 42
 ...
 connecting ... connected.
 sending: ..........
