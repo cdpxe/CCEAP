@@ -38,9 +38,9 @@ The implementation of the CCEAP protocol is split into two components, a client 
 
 All actions can be performed over the network or on local host. The easiest way is to open two X terminals (e.g. GNOME Terminal) and start the server in one terminal and the client in the other.
 
-#### Example Walkthrough for an Exercise
+#### Example Walk-through for an Exercise
 
-Let us asume that the exercise given to the students was to create a covert channel that uses the [Reserved/Unused](http://ih-patterns.blogspot.de/p/blog-page_13.html) pattern. The students look up the pattern description, which tells:
+Let us assume that the exercise given to the students was to create a covert channel that uses the [Reserved/Unused](http://ih-patterns.blogspot.de/p/blog-page_13.html) pattern. The students look up the pattern description, which tells:
 
 *The covert channel encodes hidden data into a reserved or unused header/PDU element.*
 
