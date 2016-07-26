@@ -26,6 +26,8 @@ The lecturer has to introduce
 - the CCEAP protocol (see below), and
 - Hiding patterns as they are described on our [network information hiding patterns website](http://ih-patterns.blogspot.de/p/introduction.html) that also points to several of our recent publications in which we introduce the topic.
 
+   **Please Note:** Currently, CCEAP supports only storage channels and protocol-agnostic timing channels, also no covert channels for OSI layers 1-2 are supported. For an detailed explanation of these terms, please see our book [Network Information Hiding in Communication Networks](http://eu.wiley.com/WileyCDA/WileyTitle/productCd-1118861698.html), Chapters 2 and 3.
+
 #### 2. Exercises
 
 In the exercises, students should try to create covert channels **or** should try to determine the type (pattern) of a given covert channel. Therefore, the lecturer can perform one of two exercises:
