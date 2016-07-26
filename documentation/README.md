@@ -74,7 +74,7 @@ The options header contains a freely definable *Identifier*, *Type* and *Value* 
 
 The implementation of the CCEAP protocol is split into two components, a client and a server. The client transfers CCEAP protocol packets to the server. Users can freely define how the particular fields of the CCEAP header are filled and how optional header components are embedded. The server, on the other hand, simply displays the received content which allows to view whether packet data were transmitted in the desired way.
 
-All actions can be performed over the network or on local host. The easiest way is to open two X terminals (e.g. GNOME Terminal) and start the server in one terminal and the client in the other.
+All actions can be performed over the network or on the local host. The easiest way is to open two X terminals (e.g. GNOME Terminal) and start the server in one terminal and the client in the other.
 
 #### Example Walk-through for an Exercise
 
@@ -82,7 +82,7 @@ Let us assume that the exercise given to the students was to create a covert cha
 
 *The covert channel encodes hidden data into a reserved or unused header/PDU element.*
 
-By analyzing the protocol structure of CCEAP, the students find an unused header field, namely the *Dummy* field, which is 8 bytes in size. The field could be used to place hidden data in the way as described by the pattern. By running `./client -h`, the students check whether they can manipulate the Dummy field in some way:
+By analyzing the protocol structure of CCEAP, the students find an unused header field, namely the *Dummy* field, which is 8 bits in size. The field could be used to place hidden data in the way as described by the pattern. By running `./client -h`, the students check whether they can manipulate the Dummy field in some way:
 
 ```
 $ ./client -h
@@ -96,7 +96,7 @@ The following parameters are supported by CCEAP client v.0.4.1:
 -u x   Use digit x instead of 0 as `dummy' value in the main header
 ```
 
-The parameter `-u` can obviously used for this purpose. First, the students run the server on localhost port 2222:
+The parameter `-u` can obviously be used for creating a Reserved/Unused pattern-based covert channel. To this end, the students run the server on the localhost port 2222:
 
 ```
 $ ./server -P 2222
@@ -105,7 +105,7 @@ CCEAP - Covert Channel Educational Analysis Protocol (Server)
    => version: 0.4.1, written by: Steffen Wendzel, www.wendzel.de
 ```
 
-Please note that the `-v` parameter provides verbose output for the client and for the server.
+Please note that the use of an additional `-v` parameter provides verbose output for the client and for the server and that the parameter `-h` works for both, `server` and `client`.
 
 Next, the students run the client and connect to localhost (127.0.0.1), port 2222. They set the value of the Dummy field to 42:
 
@@ -127,4 +127,4 @@ received data (12 bytes):
  > number of options:     0
 ```
 
-More complex outputs will be provided when more complex packets are transferred, e.g. those containing optional headers.
+More complex outputs will be provided when more complex packets are received by the server, e.g. packets containing optional headers.
