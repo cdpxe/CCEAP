@@ -4,7 +4,9 @@ The *Covert Channel Educational Analysis Protocol* (CCEAP) is a network protocol
 
 The protocol is explicitly vulnerable against several [hiding patterns](http://ih-patterns.blogspot.de/p/introduction.html) so that switching protocols while explaining hiding patterns is not necessary. The protocol's structure is simple and self-explanatory and its implementation is kept at a minimum level of code lines to make it especially accessible to students.
 
-Please provide requests and feedback to the author: Steffen Wendzel, www.wendzel.de (steffen (at) wendzel (dot) de). Research on covert channel teaching is currently performed by [Steffen Wendzel and Wojciech Mazurczyk](http://ih-patterns.blogspot.de/p/authorscontact.html).
+Please send requests and feedback to the author: Steffen Wendzel, [www.wendzel.de](http://www.wendzel.de) (steffen (at) wendzel (dot) de).
+
+Research on covert channel teaching is currently performed by [Steffen Wendzel and Wojciech Mazurczyk](http://ih-patterns.blogspot.de/p/authorscontact.html).
 
 ## Installation
 
@@ -42,7 +44,7 @@ Let us asume that the exercise given to the students was to create a covert chan
 
 By analyzing the protocol structure of CCEAP, the students find an unused header field, namely the *Dummy* field, which is 8 bytes in size. The field could be used to place hidden data in the way as described by the pattern. By running `./client -h`, the students check whether they can manipulate the Dummy field in some way:
 
-```shell
+```
 $ ./client -h
 CCEAP protocol implementation. Copyright (C) 2016 Steffen Wendzel
 ...
@@ -56,7 +58,7 @@ The following parameters are supported by CCEAP client v.0.4.1:
 
 The parameter `-u` can obviously used for this purpose. First, the students run the server on localhost port 2222:
 
-```shell
+```
 $ ./server -P 2222
 ...
 CCEAP - Covert Channel Educational Analysis Protocol (Server)
@@ -67,7 +69,7 @@ Please note that the `-v` parameter provides verbose output for the client and f
 
 Next, the students run the client and connect to localhost (127.0.0.1), port 2222. They set the value of the Dummy field to 42:
 
-```shell
+```
 $./client -D 127.0.0.1 -P 2222 -u 42
 ...
 connecting ... connected.
