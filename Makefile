@@ -26,19 +26,20 @@
 # *
 # */
 
-DEFAULTPORT=3333
+DEFAULTPORT=2222
 CC=gcc
 HEADERS=main.h
 CFLAGS=-Wall -W -Wshadow -c -g -ggdb
 OBJECTS=client.o support.o server.o
+BUILDFLAGS=-O
 .SUFFIXES : .c .o
 
 .c.o : $(HEADERS)
 	$(CC) $(CFLAGS) $<
 
 all : $(OBJECTS)
-	$(CC) -o client client.o support.o
-	$(CC) -o server server.o support.o
+	$(CC) $(BUILDFLAGS) -o client client.o support.o
+	$(CC) $(BUILDFLAGS) -o server server.o support.o
 
 clean : 
 	rm -vf client server a.out *~ *.core core $(OBJECTS)
