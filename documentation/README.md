@@ -1,6 +1,6 @@
 # A Brief CCEAP Documentation
 
-*v. 0.1.3 by Dr. Steffen Wendzel*
+*v. 0.1.4 by Dr. Steffen Wendzel*
 
 (**Note:** An initial academic publication is currently under review for a conference; it provides more information on CCEAP and will be linked here in case of acceptance and publication.)
 
@@ -23,6 +23,7 @@ The educational process is split into two parts. First, fundamentals are explain
 #### 1. Preparing Students to Use CCEAP
 
 The lecturer has to introduce
+
 - the CCEAP protocol (see below), and
 - Hiding patterns as they are described on our [network information hiding patterns website](http://ih-patterns.blogspot.de/p/introduction.html) that also points to several of our recent publications in which we introduce the topic.
 
@@ -134,6 +135,7 @@ More complex outputs will be provided when more complex packets are received by 
 ## Further Reading
 
 **Publications on Fundamentals of Network Covert Channels/Network Steganography:**
+
 - W. Mazurczyk, S. Wendzel, S. Zander, A. Houmansadr, K. Szczypiorski: [Network Information Hiding in Communication Networks](http://eu.wiley.com/WileyCDA/WileyTitle/productCd-1118861698.html), Wiley IEEE-Press, 2016.
 - S. Zander, G. Armitage, P. Branch: [A survey of covert channels and countermeasures in computer network protocols](http://researchbank.swinburne.edu.au/vital/access/services/Download/swin:9173/SOURCE2), Computing Surveys and Tutorials, IEEE, 2007.
 - S. Wendzel, W. Mazurczyk, L. Caviglione, M. Meier:[Hidden and Uncontrolled–On the Emergence of Network Steganographic Threats](https://www.researchgate.net/profile/Steffen_Wendzel/publication/263773592_Hidden_and_Uncontrolled_-_On_the_Emergence_of_Network_Steganographic_Threats/links/53eb38eb0cf2dc24b3cea87a.pdf), Proc. ISSE, Springer, 2014.
@@ -142,11 +144,13 @@ More complex outputs will be provided when more complex packets are received by 
 - several other surveys and papers on SoTA analysis exist, cf. Google Scholar.
 
 **Publications on Information Hiding Patterns:**
+
 - S. Wendzel, S. Zander, B. Fechner, C. Herdin: [Pattern-based Survey and Categorization of Network Covert Channel Techniques](https://dl.acm.org/citation.cfm?doid=2737799.2684195), ACM Computing Surveys, ACM, 2015. Early version available for free download [here](https://www.researchgate.net/publication/263048788_Pattern-Based_Survey_and_Categorization_of_Network_Covert_Channel_Techniques?ev=prf_pub).
 - Chapter 3 of: W. Mazurczyk, S. Wendzel, S. Zander, A. Houmansadr, K. Szczypiorski: [Network Information Hiding in Communication Networks](http://eu.wiley.com/WileyCDA/WileyTitle/productCd-1118861698.html), Wiley IEEE-Press, 2016.
 - S. Wendzel, C. Palmer: [Creativity in Mind: Evaluating and Maintaining Advances in Network Steganographic Research](http://www.jucs.org/jucs_21_12/creativity_in_mind_evaluating), Journal of Universal Computer Science (J.UCS), 2015.
 
 **Websites:**
+
 - [Network Information Hiding Patterns Project](http://ih-patterns.blogspot.de/)
 - Europol EC3 initiative [Criminal Use of Information Hiding](http://cuing.org/) (CUING)
 - TU Vienna [Network Covert Channel Lab](https://www.nt.tuwien.ac.at/research/communication-networks/network-security-laboratory/#nsII), cf. T. Zseby, F. Iglesias Vázquez, V. Bernhardt, D. Frkat, R. Annessi: [A Network Steganography Lab on Detecting TCP/IP Covert Channels](http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7405338), IEEE Transactions on Education, IEEE; 2016.

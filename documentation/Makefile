@@ -3,6 +3,11 @@ INPUTFILE=README.md
 OUTPUTFILE=docs.pdf
 
 all : $(INPUTFILE)
-	$(PANDOC) $(INPUTFILE) -o $(OUTPUTFILE)
+	$(PANDOC) -V colorlinks --reference-links $(INPUTFILE) -o $(OUTPUTFILE)
 
+e :
+	gedit $(INPUTFILE)
+
+v :
+	evince $(OUTPUTFILE)
 
