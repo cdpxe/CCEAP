@@ -1,6 +1,6 @@
 # A Brief CCEAP Documentation
 
-*v. 0.1.4 by Dr. Steffen Wendzel*
+*v. 0.1.5 by Dr. Steffen Wendzel*
 
 (**Note:** An initial academic publication is currently under review for a conference; it provides more information on CCEAP and will be linked here in case of acceptance and publication.)
 
