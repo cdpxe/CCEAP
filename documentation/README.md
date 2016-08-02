@@ -141,6 +141,8 @@ More complex outputs will be provided when more complex packets are received by 
 - S. Wendzel, W. Mazurczyk, L. Caviglione, M. Meier: [Hidden and Uncontrolled–On the Emergence of Network Steganographic Threats](https://www.researchgate.net/profile/Steffen_Wendzel/publication/263773592_Hidden_and_Uncontrolled_-_On_the_Emergence_of_Network_Steganographic_Threats/links/53eb38eb0cf2dc24b3cea87a.pdf), Proc. ISSE, Springer, 2014.
 - J. Lubacz, W. Mazurczyk, K. Szczypiorski: [Principles and overview of network steganography](http://cygnus.tele.pw.edu.pl/~wmazurczyk/art/CommMag_Principle.pdf), IEEE Comm. Magazine, IEEE, 2014.
 - B. Carrara, C. Adams: [A Survey and Taxonomy Aimed at the Detection and Measurement of Covert Channels](http://dl.acm.org/citation.cfm?id=2930800), Proc. 4th ACM Workshop on Information Hiding and Multimedia Security, ACM, 2016.
+- C. H. Rowland: [Covert channels in the TCP/IP protocol suite](http://ojphi.org/ojs/index.php/fm/article/view/528), First Monday, Vol. 2(5), 1997.
+- S. Wendzel, J. Keller: [Low-Attention Forwarding for Mobile Network Covert Channels](http://link.springer.com/chapter/10.1007/978-3-642-24712-5_10), Proc. Communications and Multimedia Security, LNCS 7025, pp. 122-133, Springer, 2011.
 - several other surveys and papers on SoTA analysis exist, cf. Google Scholar.
 
 **Publications on Information Hiding Patterns:**
@@ -154,3 +156,4 @@ More complex outputs will be provided when more complex packets are received by 
 - [Network Information Hiding Patterns Project](http://ih-patterns.blogspot.de/)
 - Europol EC3 initiative [Criminal Use of Information Hiding](http://cuing.org/) (CUING)
 - TU Vienna [Network Covert Channel Lab](https://www.nt.tuwien.ac.at/research/communication-networks/network-security-laboratory/#nsII), cf. T. Zseby, F. Iglesias Vázquez, V. Bernhardt, D. Frkat, R. Annessi: [A Network Steganography Lab on Detecting TCP/IP Covert Channels](http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7405338), IEEE Transactions on Education, IEEE; 2016.
+
