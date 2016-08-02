@@ -35,7 +35,7 @@ void
 	
 	if (!(q = calloc(size, elem))) {
 		perror("calloc");
-		fprintf(stderr, "call was calloc_exit(%i, %i)\n", size, elem);
+		fprintf(stderr, "calloc_exit was called, parameters: (%i, %i)\n", size, elem);
 		exit(ERR_EXIT);
 	}
 	return q;
@@ -44,7 +44,7 @@ void
 void
 print_gpl(void)
 {
-	printf("CCEAP protocol implementation. Copyright (C) 2016 Steffen Wendzel\n"
+	printf("CCEAP protocol implementation. Copyright (C) 2016 Steffen Wendzel.\n"
 	       "This program comes with ABSOLUTELY NO WARRANTY; for details see "
 	       "LICENSE file.\n"
 	       "This is free software, and you are welcome to redistribute it "
@@ -62,14 +62,14 @@ usage(int type)
 			"*** General parameters:\n"
 			"-D x   Destination IP x to connect to\n"
 			"-P x   TCP port x to connect to\n"
-			"-h     provide an overview of supported parameters (this output)\n"
-			"-v     activate verbose mode\n"
+			"-h     Provide an overview of supported parameters (this output)\n"
+			"-v     Activate verbose mode\n"
 			"\n"
 			"*** Parameters specific for the CCEAP protocol:\n"
 			"-c x   Number of packets to send (default: 10)\n"
 			"-i x   Sequence number x to use for CCEAP\n"
-			"-p x   Duplicate packet with the sequence number x\n"
-			"-x x   Exclude packet with the sequence number x\n"
+			"-p x   Duplicate the packet with the sequence number x\n"
+			"-x x   Exclude the packet with the sequence number x\n"
 			"-s x   Use a pre defined sequence numbers given in x in the form:\n"
 			"       'Seq_1,Seq_2,Seq_3', e.g. '1,2,3', where 1 is the ISN\n"
 			"-d x   Use CCEAP destination address x\n"
@@ -88,8 +88,8 @@ usage(int type)
 			"\n"
 			"--------------------------------------------------------------\n"
 			"*** General parameters:\n"
-			"-h     provide an overview of supported parameters (this output)\n"
-			"-v     activate verbose mode\n"
+			"-h     Provide an overview of supported parameters (this output)\n"
+			"-v     Activate verbose mode\n"
 			"-P x   TCP port x to listen to\n"
 			"--------------------------------------------------------------\n"
 		);
@@ -100,5 +100,4 @@ usage(int type)
 	}
 	exit(ERR_EXIT);
 }
-
 
