@@ -1,8 +1,9 @@
 CHANGELOG for the CCEAP tool
 
-current : 2016-07-28
+current : 2016-08-23
  * aligned port used in Makefile with port used in docs
- * improved formating issues for PDF documentation
+ * improved formating issues for PDF documentation and introduced
+   several detail updates within the documentation
 
 v. 0.4.1 : 2016-07-26
  * Initial release
