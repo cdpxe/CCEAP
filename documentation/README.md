@@ -1,6 +1,8 @@
 # A Brief CCEAP Documentation
 
-*v. 0.1.6 by Dr. Steffen Wendzel*
+Steffen Wendzel (Fraunhofer FKIE, Germany)
+
+*version 0.1.6*
 
 **Note:** An initial academic publication on CCEAP is currently in press: S. Wendzel and W. Mazurczyk: An Educational Network Protocol for Covert Channel Analysis Using Patterns (poster), in Proc. ACM CCS, 2016.
 
