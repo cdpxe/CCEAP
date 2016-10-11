@@ -1,6 +1,7 @@
 # A Brief CCEAP Documentation
 
-Steffen Wendzel (Fraunhofer FKIE, Germany)
+Steffen Wendzel
+(Worms University of Applied Sciences, Worms, and Fraunhofer FKIE, Bonn)
 
 *version 0.1.6*
 

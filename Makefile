@@ -29,7 +29,7 @@
 DEFAULTPORT=2222
 CC=gcc
 HEADERS=main.h
-CFLAGS=-Wall -W -Wshadow -c -g -ggdb
+CFLAGS=-Wall -W -Wextra -Wshadow -c -g -ggdb
 OBJECTS=client.o support.o server.o
 BUILDFLAGS=-O
 .SUFFIXES : .c .o
