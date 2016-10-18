@@ -155,6 +155,7 @@ Timing Channel Patterns:
 * [Artificial Retransmission](http://ih-patterns.blogspot.de/p/p11-re-transmission-pattern.html)
 * [Manipulated Message Ordering](http://ih-patterns.blogspot.de/p/p10-pdu-order-pattern.html)
 * [Interpacket Times](http://ih-patterns.blogspot.de/p/blog-page_40.html)
+* [Rate/Throughput](http://ih-patterns.blogspot.de/p/p9.html), indirectly supported via the *Interpacket Time* Pattern
 
 
 
