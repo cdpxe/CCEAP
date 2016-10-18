@@ -64,6 +64,8 @@ usage(int type)
 			"-P x   TCP port x to connect to\n"
 			"-h     Provide an overview of supported parameters (this output)\n"
 			"-v     Activate verbose mode\n"
+			"-t x   Use the inter-arrival times in 'x' between packets (x should\n"
+			"       be given in the format 'Time_1,Time_2,...' (in usec/1000)\n"
 			"\n"
 			"*** Parameters specific for the CCEAP protocol:\n"
 			"-c x   Number of packets to send (default: 10)\n"

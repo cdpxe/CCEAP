@@ -25,7 +25,6 @@
  * Cf. `LICENSE' file.
  *
  */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -45,8 +44,11 @@
 #include <sys/time.h>
 #include <ctype.h>
 #include <netinet/tcp.h>
+#include <inttypes.h>
+#include <math.h>
+#include <time.h>
 
-#define CCEAP_VER	"0.4.1"
+#define CCEAP_VER	"0.5.0"
 #define CCEAP_AUTHOR	"Steffen Wendzel, www.wendzel.de"
 #define ERR_EXIT	2
 #define OK_EXIT		0
@@ -64,6 +66,7 @@ typedef struct {
 
 typedef struct {
 	#define MAX_NUM_PREDEF_SEQNOS 32
+	#define MAX_NUM_PREDEF_IATS 32
 	u_int8_t sequence_number;		/* random value to identify a connection (incremented) */
 	u_int8_t number_of_options;		/* num. of optional header elements */
 	u_int8_t destination_length;		/* length of destination value */

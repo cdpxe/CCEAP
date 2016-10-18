@@ -28,6 +28,32 @@
 
 #include "main.h"
 
+void print_time_diff(void)
+{
+	long ms;
+	time_t s;
+	struct timespec spec_now;
+	static struct timespec spec_last;
+	static int first_call = 1;
+	
+	clock_gettime(CLOCK_REALTIME, &spec_now);
+	
+	if (first_call) {
+		printf(" > time diff to prev pkt: 0.000\n");
+		first_call = 0;
+	} else {
+		s  = spec_now.tv_sec - spec_last.tv_sec;
+		ms = (spec_now.tv_nsec - spec_last.tv_nsec) / 1.0e6;	
+		if (ms < 0) {
+			ms = 1000 + ms;
+			s -= 1;
+		}
+		printf(" > time diff to prev pkt: %"PRIdMAX".%03ld\n",
+			(intmax_t)s, ms);
+	}
+	bcopy(&spec_now, &spec_last, sizeof(struct timespec));
+}
+
 void
 inform_disconnected()
 {
@@ -134,6 +160,7 @@ main(int argc, char *argv[])
 					hdr = (cceap_header_t *) buf;
 					
 					printf("received data (%d bytes):\n", x);
+					print_time_diff();
 					printf(" > sequence number:       %d\n", hdr->sequence_number);
 					printf(" > destination length:    %d\n", hdr->destination_length);
 					printf(" > dummy value:           %d\n", hdr->dummy);

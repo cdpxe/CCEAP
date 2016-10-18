@@ -28,6 +28,19 @@
 
 #include "main.h"
 
+/* simply iterate through IAT array and use the next element to call usleep() */
+void
+wait_IAT_before_send(u_int32_t *IAT_array, int IAT_array_elements)
+{
+	static int next_element = 0;
+
+	/*printf("sleeping %i [usec]\n", IAT_array[next_element]);*/
+	usleep(IAT_array[next_element]);
+	next_element++;
+	if (next_element == IAT_array_elements)
+		next_element = 0;
+}
+
 int
 main(int argc, char *argv[])
 {
@@ -52,10 +65,13 @@ main(int argc, char *argv[])
 	int sequence_number_set = 0, sequence_set = 0;
 	u_int8_t sequence_number_array[MAX_NUM_PREDEF_SEQNOS] = { '\0' };
 	int sequence_number_array_elements = 0;
+	u_int32_t IAT_array[MAX_NUM_PREDEF_IATS] = { '\0' };
+	int IAT_array_elements = 0;
+	int IAT_set = 0;
 	
 	print_gpl();
 	
-	while ((ch = getopt(argc, argv, "vhP:D:d:i:o:u:p:x:c:s:")) != -1) {
+	while ((ch = getopt(argc, argv, "vhP:D:d:i:o:u:p:x:c:s:t:")) != -1) {
 		switch (ch) {
 		case 'v':
 			verbose = 1;
@@ -137,7 +153,7 @@ main(int argc, char *argv[])
 					sequence_number_array[sequence_number_array_elements] = atoi(token);
 					sequence_number_array_elements++;
 					if (sequence_number_array_elements > MAX_NUM_PREDEF_SEQNOS) {
-						fprintf(stderr, "Too many sequence sequence_numbers used in -s\n");
+						fprintf(stderr, "Too many sequence numbers used in -s\n");
 						exit(ERR_EXIT);
 					} /*else {
 						fprintf(stderr, "sequence_number_array_elements=%d <= %d\n",
@@ -148,6 +164,43 @@ main(int argc, char *argv[])
 			if (sequence_number_array_elements > 0) {
 				sequence_set = 1;
 				num_of_pkts_to_send = sequence_number_array_elements;
+			}
+			break;
+		case 't':
+			/* define IATs */
+			{
+				char *token;
+				char *ptr_optarg;
+				char *saveptr;
+				
+				bzero(IAT_array, sizeof(IAT_array));
+				
+				for (ptr_optarg = optarg; ; ptr_optarg = NULL) {
+					int digit;
+					
+					token = strtok_r(ptr_optarg, ",", &saveptr);
+					if (token == NULL)
+						break;
+					
+					digit = token[0];
+					if (isdigit(digit) == 0) {
+						fprintf(stderr, "in parameter -s: '%c' is not a digit\n", token[0]);
+						exit(ERR_EXIT);
+					}
+					
+					IAT_array[IAT_array_elements] = atoi(token)*1000;
+					IAT_array_elements++;
+					if (IAT_array_elements > MAX_NUM_PREDEF_IATS) {
+						fprintf(stderr, "Too many IAT values given in -t\n");
+						exit(ERR_EXIT);
+					} /*else {
+						fprintf(stderr, "IAT_array_elements=%d <= %d\n",
+							IAT_array_elements, MAX_NUM_PREDEF_IATS);
+					}*/
+				}
+			}
+			if (IAT_array_elements > 0) {
+				IAT_set = 1;
 			}
 			break;
 		case 'p':
@@ -369,14 +422,20 @@ main(int argc, char *argv[])
 			if (send(sockfd, pkt, sizeof(cceap_header_t) + (sizeof(options_t) * num_options), 0) < 0)
 				err(ERR_EXIT, "send");
 			putchar('.'); fflush(stdout);
-			sleep(1);
+			if (IAT_set)
+				wait_IAT_before_send(IAT_array, IAT_array_elements);
+			else
+				sleep(1);
 		}
 		
 		if (duplicate && pkt->sequence_number == duplicate) {
 			if (send(sockfd, pkt, sizeof(cceap_header_t) + (sizeof(options_t) * num_options), 0) < 0)
 				err(ERR_EXIT, "send");
 			putchar('D'); fflush(stdout);
-			sleep(1);
+			if (IAT_set)
+				wait_IAT_before_send(IAT_array, IAT_array_elements);
+			else
+				sleep(1);
 		}
 		
 		if (sequence_number_set) {

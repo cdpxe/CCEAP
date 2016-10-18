@@ -32,6 +32,7 @@ HEADERS=main.h
 CFLAGS=-Wall -W -Wextra -Wshadow -c -g -ggdb
 OBJECTS=client.o support.o server.o
 BUILDFLAGS=-O
+SERVERBUILDFLAGS=-lm
 .SUFFIXES : .c .o
 
 .c.o : $(HEADERS)
@@ -39,7 +40,7 @@ BUILDFLAGS=-O
 
 all : $(OBJECTS)
 	$(CC) $(BUILDFLAGS) -o client client.o support.o
-	$(CC) $(BUILDFLAGS) -o server server.o support.o
+	$(CC) $(BUILDFLAGS) $(SERVERBUILDFLAGS) -o server server.o support.o
 
 clean : 
 	rm -vf client server a.out *~ *.core core $(OBJECTS)
