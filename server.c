@@ -39,7 +39,7 @@ void print_time_diff(void)
 	clock_gettime(CLOCK_REALTIME, &spec_now);
 	
 	if (first_call) {
-		printf(" > time diff to prev pkt: 0.000\n");
+		printf("0.000\n");
 		first_call = 0;
 	} else {
 		s  = spec_now.tv_sec - spec_last.tv_sec;
@@ -48,8 +48,7 @@ void print_time_diff(void)
 			ms = 1000 + ms;
 			s -= 1;
 		}
-		printf(" > time diff to prev pkt: %"PRIdMAX".%03ld\n",
-			(intmax_t)s, ms);
+		printf("%"PRIdMAX".%03ld\n", (intmax_t)s, ms);
 	}
 	bcopy(&spec_now, &spec_last, sizeof(struct timespec));
 }
@@ -160,7 +159,8 @@ main(int argc, char *argv[])
 					hdr = (cceap_header_t *) buf;
 					
 					printf("received data (%d bytes):\n", x);
-					print_time_diff();
+					printf(" > time diff to prev pkt: ");
+						print_time_diff();
 					printf(" > sequence number:       %d\n", hdr->sequence_number);
 					printf(" > destination length:    %d\n", hdr->destination_length);
 					printf(" > dummy value:           %d\n", hdr->dummy);
