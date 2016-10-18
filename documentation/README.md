@@ -1,9 +1,9 @@
 # A Brief CCEAP Documentation
 
 Steffen Wendzel
-(Worms University of Applied Sciences, Worms, and Fraunhofer FKIE, Bonn)
+(Worms University of Applied Sciences, Worms *and* Fraunhofer FKIE, Bonn)
 
-*version 0.1.6*
+*version 0.2.0*
 
 **Note:** An initial academic publication on CCEAP is currently in press: S. Wendzel and W. Mazurczyk: An Educational Network Protocol for Covert Channel Analysis Using Patterns (poster), in Proc. ACM CCS, 2016.
 
@@ -36,7 +36,7 @@ The lecturer has to introduce
 
 In the exercises, students should try to create covert channels **or** should try to determine the type (pattern) of a given covert channel. Therefore, the lecturer can perform one of two exercises:
 
-- The lecturer can ask the *students to establish a hidden communication that represents a given pattern*. The pattern can be one of the known patterns of the available [pattern collection](http://ih-patterns.blogspot.de/p/test.html), e.g. [ValueModulation](http://ih-patterns.blogspot.de/p/references-1-s.html) or [Reserved/Unused](http://ih-patterns.blogspot.de/p/blog-page_13.html). Therefore, the students need to find out how to create a covert channel for the particular pattern using the CCEAP protocol by analyzing the protocol structure and the `client` tool's command line parameters.
+- The lecturer can ask the *students to establish a hidden communication that represents a given pattern*. The pattern can be one of the known patterns of the available [pattern collection](http://ih-patterns.blogspot.de/p/test.html), e.g. [Value Modulation](http://ih-patterns.blogspot.de/p/references-1-s.html) or [Reserved/Unused](http://ih-patterns.blogspot.de/p/blog-page_13.html). Therefore, the students need to find out how to create a covert channel for the particular pattern using the CCEAP protocol by analyzing the protocol structure and the `client` tool's command line parameters.
 - Alternatively, the lecturer can ask the students to *determine the hiding pattern for a given traffic recording or for given tool parameters* that were used to run the client.
 
 
@@ -126,6 +126,7 @@ By default, the client sends 10 packets with incremental sequence number. This i
 
 ```
 received data (12 bytes):
+ > time diff to prev pkt: 0.000
  > sequence number:       1
  > destination length:    0
  > dummy value:           42
@@ -135,7 +136,35 @@ received data (12 bytes):
 
 More complex outputs will be provided when more complex packets are received by the server, e.g. packets containing optional headers.
 
+## Supported Hiding Patterns
+
+Currently, the following listed Hiding Patterns are supported by CCEAP. An explanation of how each pattern is addressed by CCEAP can moreover be found in our abovementioned CCS paper and poster (download link will be added soon).
+
+Storage Channel Patterns:
+
+* [Size Modulation](http://ih-patterns.blogspot.de/p/p1-size-modulation-pattern.html)
+* [Sequence Modulation](http://ih-patterns.blogspot.de/p/blog-page.html)
+* [Add Redundancy](http://ih-patterns.blogspot.de/p/p3-add-redundancy-pattern.html)
+* [Random Value](http://ih-patterns.blogspot.de/p/p5.html)
+* [Value Modulation](http://ih-patterns.blogspot.de/p/references-1-s.html)
+* [Reserved/Unused](http://ih-patterns.blogspot.de/p/blog-page_13.html)
+
+Timing Channel Patterns:
+
+* [Artificial Message/Packet Loss (a.k.a. PDU Corruption)](http://ih-patterns.blogspot.de/p/p4-pdu-corruptionloss-pattern.html)
+* [Artificial Retransmission](http://ih-patterns.blogspot.de/p/p11-re-transmission-pattern.html)
+* [Manipulated Message Ordering](http://ih-patterns.blogspot.de/p/p10-pdu-order-pattern.html)
+* [Interpacket Times](http://ih-patterns.blogspot.de/p/blog-page_40.html)
+
+
+
 ## Further Reading
+
+**Publications on Information Hiding Patterns:**
+
+- S. Wendzel, S. Zander, B. Fechner, C. Herdin: [Pattern-based Survey and Categorization of Network Covert Channel Techniques](https://dl.acm.org/citation.cfm?doid=2737799.2684195), ACM Computing Surveys, ACM, 2015. Early version available for free download [here](https://www.researchgate.net/publication/263048788_Pattern-Based_Survey_and_Categorization_of_Network_Covert_Channel_Techniques?ev=prf_pub).
+- Chapter 3 of: W. Mazurczyk, S. Wendzel, S. Zander, A. Houmansadr, K. Szczypiorski: [Network Information Hiding in Communication Networks](http://eu.wiley.com/WileyCDA/WileyTitle/productCd-1118861698.html), Wiley IEEE-Press, 2016.
+- S. Wendzel, C. Palmer: [Creativity in Mind: Evaluating and Maintaining Advances in Network Steganographic Research](http://www.jucs.org/jucs_21_12/creativity_in_mind_evaluating), Journal of Universal Computer Science (J.UCS), 2015.
 
 **Publications on Fundamentals of Network Covert Channels/Network Steganography:**
 
@@ -147,12 +176,6 @@ More complex outputs will be provided when more complex packets are received by 
 - C. H. Rowland: [Covert channels in the TCP/IP protocol suite](http://ojphi.org/ojs/index.php/fm/article/view/528), First Monday, Vol. 2(5), 1997.
 - S. Wendzel, J. Keller: [Low-Attention Forwarding for Mobile Network Covert Channels](http://link.springer.com/chapter/10.1007/978-3-642-24712-5_10), Proc. Communications and Multimedia Security, LNCS 7025, pp. 122-133, Springer, 2011.
 - several other surveys and papers on SoTA analysis exist, cf. Google Scholar.
-
-**Publications on Information Hiding Patterns:**
-
-- S. Wendzel, S. Zander, B. Fechner, C. Herdin: [Pattern-based Survey and Categorization of Network Covert Channel Techniques](https://dl.acm.org/citation.cfm?doid=2737799.2684195), ACM Computing Surveys, ACM, 2015. Early version available for free download [here](https://www.researchgate.net/publication/263048788_Pattern-Based_Survey_and_Categorization_of_Network_Covert_Channel_Techniques?ev=prf_pub).
-- Chapter 3 of: W. Mazurczyk, S. Wendzel, S. Zander, A. Houmansadr, K. Szczypiorski: [Network Information Hiding in Communication Networks](http://eu.wiley.com/WileyCDA/WileyTitle/productCd-1118861698.html), Wiley IEEE-Press, 2016.
-- S. Wendzel, C. Palmer: [Creativity in Mind: Evaluating and Maintaining Advances in Network Steganographic Research](http://www.jucs.org/jucs_21_12/creativity_in_mind_evaluating), Journal of Universal Computer Science (J.UCS), 2015.
 
 **Websites:**
 
