@@ -3,7 +3,7 @@
 Steffen Wendzel
 (Worms University of Applied Sciences, Worms *and* Fraunhofer FKIE, Bonn)
 
-*version 0.2.0*
+*version 0.2.1*
 
 **Note:** An initial academic publication on CCEAP is currently in press: S. Wendzel and W. Mazurczyk: An Educational Network Protocol for Covert Channel Analysis Using Patterns (poster), in Proc. ACM CCS, 2016. You can already download the [conference poster](https://github.com/cdpxe/CCEAP/blob/master/documentation/CCS16_poster_(improved).pdf).
 
@@ -25,12 +25,12 @@ The educational process is split into two parts. First, fundamentals are explain
 
 #### 1. Preparing Students to Use CCEAP
 
-The lecturer has to introduce
+The lecturer is required to introduce
 
 - the CCEAP protocol (see below), and
-- Hiding patterns as they are described on our [network information hiding patterns website](http://ih-patterns.blogspot.de/p/introduction.html) that also points to several of our recent publications in which we introduce the topic.
+- hiding patterns as they are described on our [project website](http://ih-patterns.blogspot.de/p/introduction.html) that also points to several of our recent publications in which we introduce the topic.
 
-   **Please Note:** Currently, CCEAP supports only storage channels and protocol-agnostic timing channels, also no covert channels for OSI layers 1-2 are supported. For an detailed explanation of these terms, please see our book [Network Information Hiding in Communication Networks](http://eu.wiley.com/WileyCDA/WileyTitle/productCd-1118861698.html), Chapters 2 and 3.
+   **Please Note:** Currently, CCEAP supports most of the storage channels patterns as well as some timing channel patterns. However, a few hiding patterns as well covert channels for OSI layers 1-2 are not supported. For an detailed explanation of these terms, please see our book [Network Information Hiding in Communication Networks](http://eu.wiley.com/WileyCDA/WileyTitle/productCd-1118861698.html), Chapters 2 and 3.
 
 #### 2. Exercises
 
@@ -138,7 +138,7 @@ More complex outputs will be provided when more complex packets are received by 
 
 ## Supported Hiding Patterns
 
-Currently, the following listed Hiding Patterns are supported by CCEAP. An explanation of how each pattern is addressed by CCEAP can moreover be found in our abovementioned CCS paper and poster (download link will be added soon).
+Currently, the below listed hiding patterns are supported by CCEAP.
 
 Storage Channel Patterns:
 
@@ -157,9 +157,13 @@ Timing Channel Patterns:
 * [Interpacket Times](http://ih-patterns.blogspot.de/p/blog-page_40.html)
 * [Rate/Throughput](http://ih-patterns.blogspot.de/p/p9.html), indirectly supported via the *Interpacket Time* Pattern
 
-
+An explanation of how each pattern is addressed by CCEAP can moreover be found in our CCS'16 poster (Wendzel and Mazurczyk, 2016), cf. `Further Reading/Publications on CCEAP' section at the end of the document.
 
 ## Further Reading
+
+**Publications on CCEAP:**
+
+- S. Wendzel and W. Mazurczyk: An Educational Network Protocol for Covert Channel Analysis Using Patterns (poster), in Proc. ACM CCS, 2016. You can already download the [conference poster](https://github.com/cdpxe/CCEAP/blob/master/documentation/CCS16_poster_(improved).pdf).
 
 **Publications on Information Hiding Patterns:**
 
