@@ -6,8 +6,8 @@ all : $(INPUTFILE)
 	$(PANDOC) -V colorlinks --reference-links $(INPUTFILE) -o $(OUTPUTFILE)
 
 e :
-	gedit $(INPUTFILE)
+	gedit $(INPUTFILE) || pluma $(INPUTFILE)
 
 v :
-	evince $(OUTPUTFILE)
+	evince $(OUTPUTFILE) || atril $(OUTPUTFILE)
 
