@@ -5,7 +5,7 @@ Steffen Wendzel
 
 *version 0.2.1*
 
-**Note:** An initial academic publication on CCEAP is currently in press: S. Wendzel and W. Mazurczyk: An Educational Network Protocol for Covert Channel Analysis Using Patterns (poster), in Proc. ACM CCS, 2016. You can already download the [conference poster](https://github.com/cdpxe/CCEAP/blob/master/documentation/CCS16_poster_(improved).pdf).
+**Note:** An initial academic publication on CCEAP is currently in press: S. Wendzel and W. Mazurczyk: An Educational Network Protocol for Covert Channel Analysis Using Patterns (poster), in Proc. ACM CCS, 2016. You can already download the [conference poster](https://www.researchgate.net/publication/309284322_Poster_file_for_S_Wendzel_and_W_Mazurczyk_An_Educational_Network_Protocol_for_Covert_Channel_Analysis_Using_Patterns_poster_in_Proc_ACM_CCS_2016).
 
 The *Covert Channel Educational Analysis Protocol* (CCEAP) is a network protocol designed for teaching covert channels to professionals and students. For an introduction on network covert channels (network steganography), please have a look at [this publication](https://www.researchgate.net/profile/Steffen_Wendzel/publication/263773592_Hidden_and_Uncontrolled_-_On_the_Emergence_of_Network_Steganographic_Threats/links/53eb38eb0cf2dc24b3cea87a.pdf).
 
@@ -163,7 +163,7 @@ An explanation of how each pattern is addressed by CCEAP can moreover be found i
 
 **Publications on CCEAP:**
 
-- S. Wendzel and W. Mazurczyk: An Educational Network Protocol for Covert Channel Analysis Using Patterns (poster), in Proc. ACM CCS, 2016. You can already download the [conference poster](https://github.com/cdpxe/CCEAP/blob/master/documentation/CCS16_poster_(improved).pdf).
+- S. Wendzel and W. Mazurczyk: An Educational Network Protocol for Covert Channel Analysis Using Patterns (poster), in Proc. ACM CCS, 2016. You can already download the [conference poster](https://www.researchgate.net/publication/309284322_Poster_file_for_S_Wendzel_and_W_Mazurczyk_An_Educational_Network_Protocol_for_Covert_Channel_Analysis_Using_Patterns_poster_in_Proc_ACM_CCS_2016).
 
 **Publications on Information Hiding Patterns:**
 
@@ -180,7 +180,7 @@ An explanation of how each pattern is addressed by CCEAP can moreover be found i
 - B. Carrara, C. Adams: [A Survey and Taxonomy Aimed at the Detection and Measurement of Covert Channels](http://dl.acm.org/citation.cfm?id=2930800), Proc. 4th ACM Workshop on Information Hiding and Multimedia Security, ACM, 2016.
 - C. H. Rowland: [Covert channels in the TCP/IP protocol suite](http://ojphi.org/ojs/index.php/fm/article/view/528), First Monday, Vol. 2(5), 1997.
 - S. Wendzel, J. Keller: [Low-Attention Forwarding for Mobile Network Covert Channels](http://link.springer.com/chapter/10.1007/978-3-642-24712-5_10), Proc. Communications and Multimedia Security, LNCS 7025, pp. 122-133, Springer, 2011.
-- several other surveys and papers on SoTA analysis exist, cf. Google Scholar.
+- several other surveys and papers on the topic exist, cf. Google Scholar.
 
 **Websites:**
 
