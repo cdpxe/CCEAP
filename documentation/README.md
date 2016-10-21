@@ -5,15 +5,19 @@ Steffen Wendzel
 
 *version 0.2.1*
 
-**Note:** An initial academic publication on CCEAP is currently in press: S. Wendzel and W. Mazurczyk: An Educational Network Protocol for Covert Channel Analysis Using Patterns (poster), in Proc. ACM CCS, 2016. You can already download the [conference poster](https://www.researchgate.net/publication/309284322_Poster_file_for_S_Wendzel_and_W_Mazurczyk_An_Educational_Network_Protocol_for_Covert_Channel_Analysis_Using_Patterns_poster_in_Proc_ACM_CCS_2016).
+**A note before you start reading:** An initial academic publication on CCEAP is also available:
+- S. Wendzel and W. Mazurczyk: An Educational Network Protocol for Covert Channel Analysis Using Patterns (poster), in Proc. ACM Conference on Computer and Communications Security (CCS), pp. 1739-1741, ACM, 2016. You can also download the conference poster [here](https://www.researchgate.net/publication/309284322_Poster_file_for_S_Wendzel_and_W_Mazurczyk_An_Educational_Network_Protocol_for_Covert_Channel_Analysis_Using_Patterns_poster_in_Proc_ACM_CCS_2016) that summarizes the content of the actual paper.
+- Please send requests and feedback to the author: Steffen Wendzel, [www.wendzel.de](http://www.wendzel.de) (steffen (at) wendzel (dot) de). Research on covert channel teaching is currently performed by [Steffen Wendzel and Wojciech Mazurczyk](http://ih-patterns.blogspot.de/p/authorscontact.html).
 
 The *Covert Channel Educational Analysis Protocol* (CCEAP) is a network protocol designed for teaching covert channels to professionals and students. For an introduction on network covert channels (network steganography), please have a look at [this publication](https://www.researchgate.net/profile/Steffen_Wendzel/publication/263773592_Hidden_and_Uncontrolled_-_On_the_Emergence_of_Network_Steganographic_Threats/links/53eb38eb0cf2dc24b3cea87a.pdf).
 
-The protocol is explicitly vulnerable against several [hiding patterns](http://ih-patterns.blogspot.de/p/introduction.html) so that switching protocols while explaining hiding patterns is not necessary. The protocol's structure is simple and self-explanatory and its implementation is kept at a minimum level of code lines to make it especially accessible to students.
+CCEAP is an application layer protocol that is embedded into a simple TCP connection. The protocol is explicitly vulnerable against several so-called [hiding patterns](http://ih-patterns.blogspot.de/p/introduction.html). Hiding patterns represent the core ideas of how to hide data in network transmissions.
 
-Please send requests and feedback to the author: Steffen Wendzel, [www.wendzel.de](http://www.wendzel.de) (steffen (at) wendzel (dot) de).
+### Why use CCEAP?
 
-Research on covert channel teaching is currently performed by [Steffen Wendzel and Wojciech Mazurczyk](http://ih-patterns.blogspot.de/p/authorscontact.html).
+The key advantage of CCEAP is that it is based on hiding patterns. As shown in (Wendzel et al., 2015), the >100 known methods for hiding data in network transmissions can be represented by only 11 hiding patterns. Hence, it is enough to teach students these few hiding patterns instead of >100 hiding methods.
+
+Another advantage of CCEAP is that basically all methods for hiding data in network transmissions can be explained by using only one protocol (=CCEAP). For this reason, switching network protocols while explaining hiding methods to students is not necessary anymore. The protocol's structure is simple and self-explanatory and its implementation is kept at a minimum level of code lines to make it especially accessible to students.
 
 ## Installation
 
@@ -163,7 +167,7 @@ An explanation of how each pattern is addressed by CCEAP can moreover be found i
 
 **Publications on CCEAP:**
 
-- S. Wendzel and W. Mazurczyk: An Educational Network Protocol for Covert Channel Analysis Using Patterns (poster), in Proc. ACM CCS, 2016. You can already download the [conference poster](https://www.researchgate.net/publication/309284322_Poster_file_for_S_Wendzel_and_W_Mazurczyk_An_Educational_Network_Protocol_for_Covert_Channel_Analysis_Using_Patterns_poster_in_Proc_ACM_CCS_2016).
+- S. Wendzel and W. Mazurczyk: An Educational Network Protocol for Covert Channel Analysis Using Patterns (poster), in Proc. ACM Conference on Computer and Communications Security (CCS), pp. 1739-1741, ACM, 2016. You can also download the conference poster [here](https://www.researchgate.net/publication/309284322_Poster_file_for_S_Wendzel_and_W_Mazurczyk_An_Educational_Network_Protocol_for_Covert_Channel_Analysis_Using_Patterns_poster_in_Proc_ACM_CCS_2016) that summarizes the content of the actual paper.
 
 **Publications on Information Hiding Patterns:**
 
