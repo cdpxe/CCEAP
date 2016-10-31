@@ -29,7 +29,8 @@
 DEFAULTPORT=2222
 CC=gcc
 HEADERS=main.h
-CFLAGS=-Wall -W -Wextra -Wshadow -c -g -ggdb
+#DEBUGFLAGS=-g -ggdb
+CFLAGS=-Wall -W -Wextra -Wshadow -c $(DEBUGFLAGS)
 OBJECTS=client.o support.o server.o
 BUILDFLAGS=-O
 SERVERBUILDFLAGS=-lm
@@ -54,4 +55,6 @@ runser :
 count :
 	wc -l *.c
 
+docs :
+	(cd documentation; make all)
 
