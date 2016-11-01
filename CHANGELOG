@@ -1,7 +1,7 @@
 CHANGELOG for the CCEAP tool
 
 current : today
- * performed additional improvements within the documentation
+ * performed additional improvements within documentation and Makefile
 
 v. 0.5.0 : 2016-10-18
  * added support for the Inter-arrival Time Pattern (and with that also an
