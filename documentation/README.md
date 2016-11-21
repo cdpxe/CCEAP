@@ -3,7 +3,7 @@
 Steffen Wendzel
 (Worms University of Applied Sciences, Worms *and* Fraunhofer FKIE, Bonn)
 
-*version 0.2.2*
+*version 0.2.3*
 
 **A note before you start reading:** An initial academic publication on CCEAP is also available:
 
@@ -38,7 +38,7 @@ The lecturer is required to introduce
 - the CCEAP protocol (see below), and
 - hiding patterns as they are described on our [project website](http://ih-patterns.blogspot.de/p/introduction.html) that also points to several of our recent publications in which we introduce the topic.
 
-   **Please Note:** Currently, CCEAP supports most of the storage channels patterns as well as some timing channel patterns. However, a few hiding patterns as well covert channels for OSI layers 1-2 are not supported. For an detailed explanation of these terms, please see our book [Network Information Hiding in Communication Networks](http://eu.wiley.com/WileyCDA/WileyTitle/productCd-1118861698.html), Chapters 2 and 3.
+   **Please Note:** Currently, CCEAP supports most of the storage channels patterns as well as some timing channel patterns. However, a few hiding patterns as well covert channels for OSI layers 1-2 are not supported. For a detailed explanation of these terms, please see our book [Network Information Hiding in Communication Networks](http://eu.wiley.com/WileyCDA/WileyTitle/productCd-1118861698.html), Chapters 2 and 3.
 
 #### 2. Exercises
 
@@ -130,7 +130,7 @@ connecting ... connected.
 sending: ..........
 sending done.
 ```
-By default, the client sends 10 packets with incremental sequence number. This is why the server will receive and display now 10 packets with the same content. Of course, such parameters can be changed as desired. The typical packet output is shown as follows:
+By default, the client sends 10 packets with incremental sequence number. Therefore, the server will receive and display now 10 packets with the same content. Of course, such parameters can be changed as desired. The typical packet output is shown as follows:
 
 ```
 received data (12 bytes):
@@ -142,7 +142,7 @@ received data (12 bytes):
  > number of options:     0
 ```
 
-More complex outputs will be provided when more complex packets are received by the server, e.g. packets containing optional headers.
+More detailed outputs will be provided when the server receives more complex packets from the client, e.g. packets containing optional headers.
 
 ## Supported Hiding Patterns
 
