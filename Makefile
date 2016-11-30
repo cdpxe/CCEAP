@@ -58,3 +58,7 @@ count :
 docs :
 	(cd documentation; make all)
 
+e :
+	gedit *.c || pluma *.c
+
+
