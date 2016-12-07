@@ -74,15 +74,14 @@ main(int argc, char *argv[])
 	int lst_port = 0;
 	options_t *options_array;
 	int verbose = 0;
+	int quiet = 0;
 	int max = 0;
 	int ret = 0;
 	int x;
 	fd_set rset;
 	char buf[1024];
 	
-	print_gpl();
-	
-	while ((ch = getopt(argc, argv, "vhP:")) != -1) {
+	while ((ch = getopt(argc, argv, "vhP:q")) != -1) {
 		switch (ch) {
 		case 'v':
 			verbose = 1;
@@ -91,12 +90,18 @@ main(int argc, char *argv[])
 			/* TCP port to listen on */
 			lst_port = atoi(optarg);
 			break;
+		case 'q':
+			quiet = 1;
+			break;
 		case 'h':
 		default:
 			usage(USAGE_SERVER);
 			/* NOTREACHED */
 		}
 	}
+
+	if (!quiet)
+		print_gpl();
 
 	/* basic checks of provided parameters */
 	if (lst_port >= 0xffff || lst_port < 1) {
@@ -105,8 +110,12 @@ main(int argc, char *argv[])
 	}
 	
 	/* short welcome notice */
-	fprintf(stdout, "CCEAP - Covert Channel Educational Analysis Protocol (Server)\n");
-	fprintf(stdout, "   => version: " CCEAP_VER ", written by: " CCEAP_AUTHOR "\n");
+	if (quiet) {
+		fprintf(stdout, "---\n");
+	} else {
+		fprintf(stdout, "CCEAP - Covert Channel Educational Analysis Protocol (Server)\n");
+		fprintf(stdout, "   => version: " CCEAP_VER ", written by: " CCEAP_AUTHOR "\n");
+	}
 	
 	/* summarize information if verbose mode is used */
 	if (verbose) {

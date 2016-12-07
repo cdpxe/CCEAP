@@ -93,6 +93,7 @@ usage(int type)
 			"-h     Provide an overview of supported parameters (this output)\n"
 			"-v     Activate verbose mode\n"
 			"-P x   TCP port x to listen to\n"
+			"-q     Suppress welcome messages; useful if server runs in a loop\n"
 			"--------------------------------------------------------------\n"
 		);
 		break;
