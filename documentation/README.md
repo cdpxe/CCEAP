@@ -28,7 +28,7 @@ Another advantage of CCEAP is that basically all methods for hiding data in netw
 
 ## Installation
 
-The tool requires gcc and Linux (or similar). Run `make` to build the two components of the tool: **client** and **server**.
+The tool requires gcc and Linux (or similar, e.g. [Cygwin](https://cygwin.com) under Windows). Run `make` to build the two components of the tool: **client** and **server**.
 
 ## Teaching Process in a Nutshell
 
