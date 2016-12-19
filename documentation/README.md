@@ -1,10 +1,9 @@
 # A Brief CCEAP Documentation
 
-Steffen Wendzel¹²
+Steffen Wendzel<sup>1,2</sup>
 
-¹ Worms University of Applied Sciences, Worms
-
-² Fraunhofer FKIE, Bonn
+<sup>1</sup> Worms University of Applied Sciences, Worms<br />
+<sup>2</sup> Fraunhofer FKIE, Bonn
 
 *version 0.2.3*
 
