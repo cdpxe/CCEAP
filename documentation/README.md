@@ -5,33 +5,33 @@ Steffen Wendzel<sup>1,2</sup>
 <sup>1</sup> Worms University of Applied Sciences, Worms<br />
 <sup>2</sup> Fraunhofer FKIE, Bonn
 
-*version 0.2.3*
+*version 0.2.4*
 
-**A note before you start reading:** An initial academic publication on CCEAP is also available:
+**A note before you start reading:** You are currently reading the CCEAP tool documentation. However, we also published academic work on CCEAP:
 
 - S. Wendzel and W. Mazurczyk: [An Educational Network Protocol for Covert Channel Analysis Using Patterns (poster)](http://dl.acm.org/citation.cfm?id=2989037&CFID=856548232&CFTOKEN=62229078), in Proc. ACM Conference on Computer and Communications Security (CCS), pp. 1739-1741, ACM, 2016. You can also download the conference poster [here](https://www.researchgate.net/publication/309284322_Poster_file_for_S_Wendzel_and_W_Mazurczyk_An_Educational_Network_Protocol_for_Covert_Channel_Analysis_Using_Patterns_poster_in_Proc_ACM_CCS_2016), it summarizes the content of the actual paper.
 
-- Please send requests and feedback to the author: Steffen Wendzel, [www.wendzel.de](http://www.wendzel.de) (steffen (at) wendzel (dot) de). Research on covert channel teaching is currently performed by [Steffen Wendzel and Wojciech Mazurczyk](http://ih-patterns.blogspot.de/p/authorscontact.html).
+Please send requests and feedback to the author: Steffen Wendzel, [www.wendzel.de](http://www.wendzel.de) (steffen (at) wendzel (dot) de). Research on covert channel teaching is currently performed by [Steffen Wendzel and Wojciech Mazurczyk](http://ih-patterns.blogspot.de/p/authorscontact.html).
 
 ## Introduction
 
 The *Covert Channel Educational Analysis Protocol* (CCEAP) is a network protocol designed for teaching covert channels to professionals and students. For an introduction on network covert channels (network steganography), please have a look at [this publication](https://www.researchgate.net/profile/Steffen_Wendzel/publication/263773592_Hidden_and_Uncontrolled_-_On_the_Emergence_of_Network_Steganographic_Threats/links/53eb38eb0cf2dc24b3cea87a.pdf).
 
-CCEAP is an application layer protocol that is embedded into a simple TCP connection. The protocol is explicitly vulnerable against several so-called [hiding patterns](http://ih-patterns.blogspot.de/p/introduction.html). Hiding patterns represent the core ideas of how to hide data in network transmissions.
+CCEAP is an application layer protocol that is embedded into a simple TCP connection. The protocol is explicitly vulnerable against several so-called [hiding patterns](http://ih-patterns.blogspot.de/p/introduction.html). Hiding patterns represent the core ideas of how secret data can be hidden in network transmissions.
 
 ### Why use CCEAP?
 
-The key advantage of CCEAP is that it is based on hiding patterns. As shown in (Wendzel et al., 2015), the >100 known methods for hiding data in network transmissions can be represented by only 11 hiding patterns. Hence, it is enough to teach students these few hiding patterns instead of >100 hiding methods.
+The key advantage of CCEAP is that it is based on hiding patterns. As shown in (Wendzel et al., 2015), more than hundred known network steganography methods can be represented by only 11 hiding patterns. Hence, it is enough to teach students these few hiding patterns instead of >100 hiding methods.
 
-Another advantage of CCEAP is that basically all methods for hiding data in network transmissions can be explained by using only one protocol (=CCEAP). For this reason, switching network protocols while explaining hiding methods to students is not necessary anymore. The protocol's structure is simple and self-explanatory and its implementation is kept at a minimum level of code lines to make it especially accessible to students.
+Another advantage of CCEAP is that basically all methods for hiding data in network transmissions can be explained using only one protocol (=CCEAP) instead of several network protocols (IP, TCP, UDP, HTTP, ...). For this reason, switching network protocols while explaining hiding methods to students is not necessary anymore. The protocol's structure is simple and self-explanatory and its implementation is kept at a minimum level of code lines to make it especially accessible to students.
 
 ## Installation
 
-The tool requires gcc and Linux (or similar, e.g. [Cygwin](https://cygwin.com) under Windows). Run `make` to build the two components of the tool: **client** and **server**.
+The tool requires `gcc` and Linux (or similar, e.g. [Cygwin](https://cygwin.com) under Windows). Run `make` to build the two components of the tool: *`client`* and *`server`*.
 
 ## Teaching Process in a Nutshell
 
-The educational process is split into two parts. First, fundamentals are explained, secondly, exercises are performed and evaluated.
+The educational process is split into two parts. First, fundamentals are explained to the students. Second, exercises are performed and evaluated.
 
 #### 1. Preparing Students to Use CCEAP
 
@@ -72,7 +72,7 @@ The main header contains three words. The first contains a *Sequence Number* (8 
 +-----------------------------------+
 ```
 
-The sequence number is incremental and starts with 1 by default (this can all be configured!). The number of options is zero by default.
+The sequence number is incremental and starts with 1 by default (this can be changed using command line parameters). The number of options is zero by default.
 
 #### Options Headers
 
@@ -171,13 +171,15 @@ An explanation of how each pattern is addressed by CCEAP can moreover be found i
 
 ## Further Reading
 
+The following subsections provide you with a list of papers which are linked or related to CCEAP.
+
 **Publications on CCEAP:**
 
 - S. Wendzel and W. Mazurczyk: [An Educational Network Protocol for Covert Channel Analysis Using Patterns (poster)](http://dl.acm.org/citation.cfm?id=2989037&CFID=856548232&CFTOKEN=62229078), in Proc. ACM Conference on Computer and Communications Security (CCS), pp. 1739-1741, ACM, 2016. You can also download the conference poster [here](https://www.researchgate.net/publication/309284322_Poster_file_for_S_Wendzel_and_W_Mazurczyk_An_Educational_Network_Protocol_for_Covert_Channel_Analysis_Using_Patterns_poster_in_Proc_ACM_CCS_2016), it summarizes the content of the actual paper.
 
 **Publications on Information Hiding Patterns:**
 
-- S. Wendzel, S. Zander, B. Fechner, C. Herdin: [Pattern-based Survey and Categorization of Network Covert Channel Techniques](https://dl.acm.org/citation.cfm?doid=2737799.2684195), ACM Computing Surveys, ACM, 2015. Early version available for free download [here](https://www.researchgate.net/publication/263048788_Pattern-Based_Survey_and_Categorization_of_Network_Covert_Channel_Techniques?ev=prf_pub).
+- S. Wendzel, S. Zander, B. Fechner, C. Herdin: [Pattern-based Survey and Categorization of Network Covert Channel Techniques](https://dl.acm.org/citation.cfm?doid=2737799.2684195), ACM Computing Surveys, ACM, 2015. An early version of this document is available for free: [download](https://www.researchgate.net/publication/263048788_Pattern-Based_Survey_and_Categorization_of_Network_Covert_Channel_Techniques?ev=prf_pub).
 - Chapter 3 of: W. Mazurczyk, S. Wendzel, S. Zander, A. Houmansadr, K. Szczypiorski: [Network Information Hiding in Communication Networks](http://eu.wiley.com/WileyCDA/WileyTitle/productCd-1118861698.html), Wiley IEEE-Press, 2016.
 - S. Wendzel, C. Palmer: [Creativity in Mind: Evaluating and Maintaining Advances in Network Steganographic Research](http://www.jucs.org/jucs_21_12/creativity_in_mind_evaluating), Journal of Universal Computer Science (J.UCS), 2015.
 
@@ -190,7 +192,6 @@ An explanation of how each pattern is addressed by CCEAP can moreover be found i
 - B. Carrara, C. Adams: [A Survey and Taxonomy Aimed at the Detection and Measurement of Covert Channels](http://dl.acm.org/citation.cfm?id=2930800), Proc. 4th ACM Workshop on Information Hiding and Multimedia Security, ACM, 2016.
 - C. H. Rowland: [Covert channels in the TCP/IP protocol suite](http://ojphi.org/ojs/index.php/fm/article/view/528), First Monday, Vol. 2(5), 1997.
 - S. Wendzel, J. Keller: [Low-Attention Forwarding for Mobile Network Covert Channels](http://link.springer.com/chapter/10.1007/978-3-642-24712-5_10), Proc. Communications and Multimedia Security, LNCS 7025, pp. 122-133, Springer, 2011.
-- several other surveys and papers on the topic exist, cf. Google Scholar.
 
 **Websites:**
 
