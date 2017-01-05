@@ -164,7 +164,7 @@ Timing Channel Patterns:
 * [Artificial Message/Packet Loss (a.k.a. PDU Corruption)](http://ih-patterns.blogspot.de/p/p4-pdu-corruptionloss-pattern.html)
 * [Artificial Retransmission](http://ih-patterns.blogspot.de/p/p11-re-transmission-pattern.html)
 * [Manipulated Message Ordering](http://ih-patterns.blogspot.de/p/p10-pdu-order-pattern.html)
-* [Interpacket Times](http://ih-patterns.blogspot.de/p/blog-page_40.html)
+* [Interpacket Times (Inter-arrival Time)](http://ih-patterns.blogspot.de/p/blog-page_40.html)
 * [Rate/Throughput](http://ih-patterns.blogspot.de/p/p9.html), indirectly supported via the *Interpacket Time* Pattern
 
 An explanation of how each pattern is addressed by CCEAP can moreover be found in our CCS'16 poster (Wendzel and Mazurczyk, 2016), cf. `Further Reading/Publications on CCEAP' section at the end of the document.
