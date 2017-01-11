@@ -5,7 +5,7 @@ Steffen Wendzel<sup>1,2</sup>
 <sup>1</sup> Worms University of Applied Sciences, Worms<br />
 <sup>2</sup> Fraunhofer FKIE, Bonn
 
-*version 0.2.4*
+*version 0.3*
 
 **A note before you start reading:** You are currently reading the CCEAP tool documentation. However, we also published academic work on CCEAP:
 
@@ -44,11 +44,12 @@ The lecturer is required to introduce
 
 #### 2. Exercises
 
-In the exercises, students should try to create covert channels **or** should try to determine the type (pattern) of a given covert channel. Therefore, the lecturer can perform one of two exercises:
+In the exercises, students try to create covert channels **or** they try to determine the type (pattern) of a given covert channel. Therefore, the lecturer can perform one of two types of exercises:
 
 - The lecturer can ask the *students to establish a hidden communication that represents a given pattern*. The pattern can be one of the known patterns of the available [pattern collection](http://ih-patterns.blogspot.de/p/test.html), e.g. [Value Modulation](http://ih-patterns.blogspot.de/p/references-1-s.html) or [Reserved/Unused](http://ih-patterns.blogspot.de/p/blog-page_13.html). Therefore, the students need to find out how to create a covert channel for the particular pattern using the CCEAP protocol by analyzing the protocol structure and the `client` tool's command line parameters.
 - Alternatively, the lecturer can ask the students to *determine the hiding pattern for a given traffic recording or for given tool parameters* that were used to run the client.
 
+**Sample exercises** can be found in the CCEAP repository under the following URL [https://github.com/cdpxe/CCEAP/tree/master/sample_exercises](https://github.com/cdpxe/CCEAP/tree/master/sample_exercises). Also, cf. section *Example Walk-through for an Exercise* in *this file* for an explanation of how exercises are performed.
 
 ## CCEAP Protocol
 
@@ -94,7 +95,7 @@ All actions can be performed over the network or on the local host. The easiest 
 
 #### Example Walk-through for an Exercise
 
-Let us assume that the exercise given to the students was to create a covert channel that uses the [Reserved/Unused](http://ih-patterns.blogspot.de/p/blog-page_13.html) pattern. The students look up the pattern description, which tells:
+Sample exercises are available [here](https://github.com/cdpxe/CCEAP/tree/master/sample_exercises). However, for now let us assume that the exercise given to the students was to create a covert channel that uses the [Reserved/Unused](http://ih-patterns.blogspot.de/p/blog-page_13.html) pattern. The students look up the pattern description, which tells:
 
 *The covert channel encodes hidden data into a reserved or unused header/PDU element.*
 
