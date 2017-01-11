@@ -2,7 +2,8 @@ CHANGELOG for the CCEAP tool
 
 current : today
  * performed additional improvements within documentation and Makefile
- * add quite parameter -q for the server
+ * added three pages of sample exercises including solutions
+ * added quite parameter -q for the server
 
 v. 0.5.0 : 2016-10-18
  * added support for the Inter-arrival Time Pattern (and with that also an
