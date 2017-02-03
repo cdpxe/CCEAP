@@ -1,6 +1,9 @@
 CHANGELOG for the CCEAP tool
 
 current : today
+ * [nothing so far]
+
+v. 0.5.1 : 2017-02-03
  * performed additional improvements within documentation and Makefile
  * added three pages of sample exercises including solutions
  * added quite parameter -q for the server
