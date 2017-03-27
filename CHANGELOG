@@ -1,7 +1,7 @@
 CHANGELOG for the CCEAP tool
 
 current : today
- * [nothing so far]
+ * added code to compile CCEAP under MacOS (not officially supported)
 
 v. 0.5.1 : 2017-02-03
  * performed additional improvements within documentation and Makefile

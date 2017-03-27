@@ -6,7 +6,7 @@
  * for students. The tool demonstrates several network covert channel
  * vulnerabilities in a single communication protocol.
  *
- * Copyright (C) 2016 Steffen Wendzel, steffen (at) wendzel (dot) de
+ * Copyright (C) 2017 Steffen Wendzel, steffen (at) wendzel (dot) de
  *                    http://www.wendzel.de
  *
  * This program is free software: you can redistribute it and/or modify
@@ -28,6 +28,11 @@
 
 #include "main.h"
 
+#ifdef __MACH__
+ #include <mach/clock.h>
+ #include <mach/mach.h>
+#endif
+
 void print_time_diff(void)
 {
 	long ms;
@@ -35,8 +40,19 @@ void print_time_diff(void)
 	struct timespec spec_now;
 	static struct timespec spec_last;
 	static int first_call = 1;
-	
+#ifdef __MACH__ /* code from Stackoverflow.com (Mac OS lacks clock_gettime()) */
+	#warning "Including un-supported code for MacOS. CCEAP runs best on Linux."
+	clock_serv_t cclock;
+	mach_timespec_t mts;
+
+	host_get_clock_service(mach_host_self(), CALENDAR_CLOCK, &cclock);
+	clock_get_time(cclock, &mts);
+	mach_port_deallocate(mach_task_self(), cclock);
+	spec_now.tv_sec = mts.tv_sec;
+	spec_now.tv_nsec = mts.tv_nsec;
+#else
 	clock_gettime(CLOCK_REALTIME, &spec_now);
+#endif
 	
 	if (first_call) {
 		printf("0.000\n");
