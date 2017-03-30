@@ -5,7 +5,7 @@ Steffen Wendzel<sup>1,2</sup>
 <sup>1</sup> Worms University of Applied Sciences, Worms<br />
 <sup>2</sup> Fraunhofer FKIE, Bonn
 
-*version 0.3*
+*Documentation version 0.3*
 
 **A note before you start reading:** You are currently reading the CCEAP tool documentation. However, we also published academic work on CCEAP:
 
@@ -17,7 +17,7 @@ Please send requests and feedback to the author: Steffen Wendzel, [www.wendzel.d
 
 The *Covert Channel Educational Analysis Protocol* (CCEAP) is a network protocol designed for teaching covert channels to professionals and students. For an introduction on network covert channels (network steganography), please have a look at [this publication](https://www.researchgate.net/profile/Steffen_Wendzel/publication/263773592_Hidden_and_Uncontrolled_-_On_the_Emergence_of_Network_Steganographic_Threats/links/53eb38eb0cf2dc24b3cea87a.pdf).
 
-CCEAP is an application layer protocol that is embedded into a simple TCP connection. The protocol is explicitly vulnerable against several so-called [hiding patterns](http://ih-patterns.blogspot.de/p/introduction.html). Hiding patterns represent the core ideas of how secret data can be hidden in network transmissions.
+CCEAP is an application layer protocol that is embedded into the TCP payload. The protocol is explicitly vulnerable against several so-called [hiding patterns](http://ih-patterns.blogspot.de/p/introduction.html). Hiding patterns represent the core ideas of how secret data can be hidden in network transmissions. The core idea is that CCEAP allows students model the protocol structure in a way that they can represent covert channels.
 
 ### Why use CCEAP?
 
@@ -31,7 +31,7 @@ The tool requires `gcc` and Linux (or similar, e.g. [Cygwin](https://cygwin.com)
 
 ## Teaching Process in a Nutshell
 
-The educational process is split into two parts. First, fundamentals are explained to the students. Second, exercises are performed and evaluated.
+The educational process is split into two parts. First, a lecturer explains the fundamentals of CCEAP and network steganography to the students. Second, students perform their exercises, which are afterwards evaluated by the teacher.
 
 #### 1. Preparing Students to Use CCEAP
 
@@ -53,11 +53,11 @@ In the exercises, students try to create covert channels **or** they try to dete
 
 ## CCEAP Protocol
 
-The protocol contains two components: A CCEAP main header and options headers (between 0-128). The options headers will be concatenated to the main header.
+The protocol contains two components: the CCEAP `main header` and `options headers` (between 0-128). The options headers will be attached to the main header.
 
 #### Main Header
 
-The main header contains three words. The first contains a *Sequence Number* (8 bit), the indicator of how many options headers are attached (*Number of Options*, 8 bits), the length of the destination address in bytes (*Destination Length*, 8 bits) and an unused *Dummy* field (8 bits). The following two words contain the destination address (an ASCII value) that is padded with `X` bytes if too short for two words.
+The main header contains three 32 bit words. The first word contains a *Sequence Number* (8 bit), the indicator of how many options headers are attached (*Number of Options*, 8 bits), the length of the destination address (measured in bytes, called *Destination Length*, 8 bits) and an unused *Dummy* field (8 bits). The following two words contain the *Destination Address* (can be an arbitrary ASCII value) that is padded with `X` bytes if too short for two words.
 
 ```
 0       8        16       24       32
@@ -75,7 +75,7 @@ The main header contains three words. The first contains a *Sequence Number* (8 
 
 The sequence number is incremental and starts with 1 by default (this can be changed using command line parameters). The number of options is zero by default.
 
-#### Options Headers
+#### Options Header
 
 The options header contains a freely definable *Identifier*, *Type* and *Value* field (8 bits each) and another *Dummy* field (also 8 bit).
 
@@ -122,7 +122,7 @@ CCEAP - Covert Channel Educational Analysis Protocol (Server)
    => version: 0.4.1, written by: Steffen Wendzel, www.wendzel.de
 ```
 
-Please note that the use of an additional `-v` parameter provides verbose output for the client and for the server and that the parameter `-h` works for both, `server` and `client`.
+Please note that the use of an additional `-v` parameter provides verbose output when used with `server` or `client`. The parameter `-h` works also for both, `server` and `client`.
 
 Next, the students run the client and connect to localhost (127.0.0.1), port 2222. They set the value of the Dummy field to 42:
 
@@ -172,7 +172,7 @@ An explanation of how each pattern is addressed by CCEAP can moreover be found i
 
 ## Further Reading
 
-The following subsections provide you with a list of papers which are linked or related to CCEAP.
+The following subsections provide a list of papers which are directly linked or related to CCEAP.
 
 **Publications on CCEAP:**
 
@@ -183,6 +183,7 @@ The following subsections provide you with a list of papers which are linked or 
 - S. Wendzel, S. Zander, B. Fechner, C. Herdin: [Pattern-based Survey and Categorization of Network Covert Channel Techniques](https://dl.acm.org/citation.cfm?doid=2737799.2684195), ACM Computing Surveys, ACM, 2015. An early version of this document is available for free: [download](https://www.researchgate.net/publication/263048788_Pattern-Based_Survey_and_Categorization_of_Network_Covert_Channel_Techniques?ev=prf_pub).
 - Chapter 3 of: W. Mazurczyk, S. Wendzel, S. Zander, A. Houmansadr, K. Szczypiorski: [Network Information Hiding in Communication Networks](http://eu.wiley.com/WileyCDA/WileyTitle/productCd-1118861698.html), Wiley IEEE-Press, 2016.
 - S. Wendzel, C. Palmer: [Creativity in Mind: Evaluating and Maintaining Advances in Network Steganographic Research](http://www.jucs.org/jucs_21_12/creativity_in_mind_evaluating), Journal of Universal Computer Science (J.UCS), 2015.
+- S. Wendzel, W. Mazurczyk, S. Zander: [Unified Description for Network Information Hiding Methods](http://www.jucs.org/jucs_22_11/unified_description_for_network), Journal of Universal Computer Science (J.UCS), 2016.
 
 **Publications on Fundamentals of Network Covert Channels/Network Steganography:**
 
