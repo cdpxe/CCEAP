@@ -53,11 +53,11 @@ In the exercises, students try to create covert channels **or** they try to dete
 
 ## CCEAP Protocol
 
-The protocol contains two components: the CCEAP `main header` and `options headers` (between 0-128). The options headers will be attached to the main header.
+The protocol contains two components: the CCEAP *main header* and *option headers* (between 0-128). The option headers will be attached to the main header.
 
 #### Main Header
 
-The main header contains three 32 bit words. The first word contains a *Sequence Number* (8 bit), the indicator of how many options headers are attached (*Number of Options*, 8 bits), the length of the destination address (measured in bytes, called *Destination Length*, 8 bits) and an unused *Dummy* field (8 bits). The following two words contain the *Destination Address* (can be an arbitrary ASCII value) that is padded with `X` bytes if too short for two words.
+The main header contains three 32 bit words. The first word contains a *Sequence Number* (8 bit), the indicator of how many *option headers* are attached (*Number of Options*, 8 bits), the length of the destination address (measured in bytes, called *Destination Length*, 8 bits) and an unused *Dummy* field (8 bits). The following two words contain the *Destination Address* (can be an arbitrary ASCII value) that is padded with `X` bytes if too short for two words.
 
 ```
 0       8        16       24       32
@@ -73,7 +73,7 @@ The main header contains three 32 bit words. The first word contains a *Sequence
 +-----------------------------------+
 ```
 
-The sequence number is incremental and starts with 1 by default (this can be changed using command line parameters). The number of options is zero by default.
+The sequence number is incremental and starts with 1 by default (this can be changed using command line parameters). The *Number of Options* field is zero by default.
 
 #### Options Header
 
@@ -89,7 +89,7 @@ The options header contains a freely definable *Identifier*, *Type* and *Value* 
 
 ## Tool Architecture and User-Guide
 
-The implementation of the CCEAP protocol is split into two components, a client and a server. The client transfers CCEAP protocol packets to the server. Users can freely define how the particular fields of the CCEAP header are filled and how optional header components are embedded. The server, on the other hand, simply displays the received content which allows to view whether packet data were transmitted in the desired way.
+The implementation of the CCEAP protocol is split into two components, a client and a server. The client transfers CCEAP protocol packets to the server. Users can freely define how the particular fields of the CCEAP header are filled and how the *options headers* are embedded. The server, on the other hand, simply displays the received content which allows to view whether packet data were transmitted in the desired way.
 
 All actions can be performed over the network or on the local host. The easiest way is to open two X terminals (e.g. GNOME Terminal) and start the server in one terminal and the client in the other.
 
@@ -145,7 +145,7 @@ received data (12 bytes):
  > number of options:     0
 ```
 
-More detailed outputs will be provided when the server receives more complex packets from the client, e.g. packets containing optional headers.
+More detailed outputs will be provided when the server receives more complex packets from the client, e.g. packets containing options headers.
 
 ## Supported Hiding Patterns
 
