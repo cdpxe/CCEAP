@@ -36,7 +36,7 @@ BUILDFLAGS=-O
 SERVERBUILDFLAGS=-lm
 .SUFFIXES : .c .o
 
-.c.o : $(HEADERS)
+%.o : %.c  $(HEADERS)
 	$(CC) $(CFLAGS) $<
 
 all : $(OBJECTS)

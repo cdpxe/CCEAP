@@ -1,8 +1,12 @@
 CHANGELOG for the CCEAP tool
 
 current : latest commit on 2017-03-30
+ * (nothing so far; current==0.5.2)
+
+v. 0.5.2 : 2017-03-30
  * added code to compile CCEAP under MacOS (not officially supported)
  * performed additional small improvements within the documentation
+ * fix header dependency in Makefile for C object files
 
 v. 0.5.1 : 2017-02-03
  * performed additional improvements within documentation and Makefile
