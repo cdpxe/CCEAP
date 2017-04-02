@@ -41,7 +41,7 @@ void print_time_diff(void)
 	static struct timespec spec_last;
 	static int first_call = 1;
 #ifdef __MACH__ /* code from Stackoverflow.com (Mac OS lacks clock_gettime()) */
-	#warning "Including un-supported code for MacOS. CCEAP runs best on Linux."
+	#warning "Including experimental code for MacOS. CCEAP runs best on Linux!"
 	clock_serv_t cclock;
 	mach_timespec_t mts;
 
