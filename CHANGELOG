@@ -4,7 +4,8 @@ current : latest commit on 2017-03-30
  * (nothing so far; current==0.5.2)
 
 v. 0.5.2 : 2017-03-30
- * added code to compile CCEAP under MacOS (not officially supported)
+ * added code to compile CCEAP under MacOS (not officially supported,
+   just experimental)
  * performed additional small improvements within the documentation
  * fix header dependency in Makefile for C object files
 
