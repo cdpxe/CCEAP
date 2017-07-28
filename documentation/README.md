@@ -1,12 +1,8 @@
 # CCEAP Documentation
 
-Steffen Wendzel¹,²
+**Steffen Wendzel**¹,²
 
-¹Worms University of Applied Sciences, Worms, Germany / ²Fraunhofer FKIE, Bonn, Germany
-
-Contact: wendzel (at) hs-worms (dot) de
-
-*Documentation version 0.3*
+¹Worms University of Applied Sciences, Worms, Germany / ²Fraunhofer FKIE, Bonn, Germany / Contact: wendzel (at) hs-worms (dot) de
 
 **A note before you start reading:** You are currently reading the CCEAP tool documentation. However, we also published academic work on CCEAP:
 
