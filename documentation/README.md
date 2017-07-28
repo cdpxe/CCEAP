@@ -1,9 +1,10 @@
-# A Brief CCEAP Documentation
+# CCEAP Documentation
 
-Steffen Wendzel<sup>1,2</sup>
+Steffen Wendzel¹,²
 
-<sup>1</sup> Worms University of Applied Sciences, Worms<br />
-<sup>2</sup> Fraunhofer FKIE, Bonn
+¹Worms University of Applied Sciences, Worms, Germany / ²Fraunhofer FKIE, Bonn, Germany
+
+Contact: wendzel (at) hs-worms (dot) de
 
 *Documentation version 0.3*
 
