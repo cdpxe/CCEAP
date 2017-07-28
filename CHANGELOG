@@ -16,7 +16,7 @@ v. 0.5.1 : 2017-02-03
 
 v. 0.5.0 : 2016-10-18
  * added support for the Inter-arrival Time Pattern (and with that also an
-   (indirect) support for the Rate/Throughput Pattern
+   (indirect) support for the Rate/Throughput Pattern)
  * aligned port used in Makefile with port used in docs
  * improved formating issues for PDF documentation and introduced
    several detail updates within the documentation
