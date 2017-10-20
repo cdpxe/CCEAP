@@ -65,9 +65,9 @@ typedef struct {
 #define MAX_NUM_OPTIONS 32
 
 typedef struct {
-	#define MAX_NUM_PREDEF_SEQNOS 2048
-	#define MAX_NUM_PREDEF_IATS 2048
-	#define MAX_NUM_PACKETS 2048
+	#define MAX_NUM_PREDEF_SEQNOS 16384
+	#define MAX_NUM_PREDEF_IATS 16384
+	#define MAX_NUM_PACKETS 16384
 	u_int8_t sequence_number;		/* random value to identify a connection (incremented) */
 	u_int8_t number_of_options;		/* num. of optional header elements */
 	u_int8_t destination_length;		/* length of destination value */
