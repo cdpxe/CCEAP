@@ -48,7 +48,7 @@
 #include <math.h>
 #include <time.h>
 
-#define CCEAP_VER	"0.5.2"
+#define CCEAP_VER	"0.5.3"
 #define CCEAP_AUTHOR	"Steffen Wendzel, www.wendzel.de"
 #define ERR_EXIT	2
 #define OK_EXIT		0
@@ -65,8 +65,9 @@ typedef struct {
 #define MAX_NUM_OPTIONS 32
 
 typedef struct {
-	#define MAX_NUM_PREDEF_SEQNOS 32
-	#define MAX_NUM_PREDEF_IATS 32
+	#define MAX_NUM_PREDEF_SEQNOS 2048
+	#define MAX_NUM_PREDEF_IATS 2048
+	#define MAX_NUM_PACKETS 2048
 	u_int8_t sequence_number;		/* random value to identify a connection (incremented) */
 	u_int8_t number_of_options;		/* num. of optional header elements */
 	u_int8_t destination_length;		/* length of destination value */

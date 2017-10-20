@@ -1,7 +1,11 @@
 CHANGELOG for the CCEAP tool
 
-current : latest commit on 2017-03-30
- * (nothing so far; current==0.5.2)
+current(0.5.3) : latest commit on 2017-10-20
+ * fixed an error message in the client
+ * increased number of packets that can be send from 255 to 2048
+ * automatically adjust number of packets to be send based on number
+   of IAT values if parameter -t is used (can still be overwritten by
+   adding -c after -t in the command line)
 
 v. 0.5.2 : 2017-03-30
  * added code to compile CCEAP under MacOS (not officially supported,

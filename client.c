@@ -99,10 +99,10 @@ main(int argc, char *argv[])
 			break;
 		case 'c':
 			/* number of packets to send */
-			if (atoi(optarg) >= 0 && atoi(optarg) < 0xff) {
+			if (atoi(optarg) >= 0 && atoi(optarg) < MAX_NUM_PACKETS) {
 				num_of_pkts_to_send = atoi(optarg);
 			} else {
-				fprintf(stderr, "Number of packets to send is out of range.\n");
+				fprintf(stderr, "Number of packets to send is out of range (MAX=%i).\n", MAX_NUM_PACKETS);
 				exit(ERR_EXIT);
 			}
 			break;
@@ -184,7 +184,7 @@ main(int argc, char *argv[])
 					
 					digit = token[0];
 					if (isdigit(digit) == 0) {
-						fprintf(stderr, "in parameter -s: '%c' is not a digit\n", token[0]);
+						fprintf(stderr, "in parameter -t: '%c' is not a digit\n", token[0]);
 						exit(ERR_EXIT);
 					}
 					
@@ -201,6 +201,9 @@ main(int argc, char *argv[])
 			}
 			if (IAT_array_elements > 0) {
 				IAT_set = 1;
+				printf("Adjusting number of packets (-c) to %i to match timing parameters (-t). You can change this by using parameter -c behind parameter -t.\n",
+					IAT_array_elements);
+				num_of_pkts_to_send = IAT_array_elements;
 			}
 			break;
 		case 'p':
