@@ -21,11 +21,11 @@ The *Covert Channel Educational Analysis Protocol* (CCEAP) is a network protocol
 
 ### CCEAP in one Paragraph
 
-CCEAP is an application layer protocol that is embedded into the TCP payload. The protocol is explicitly vulnerable against several so-called [hiding patterns](http://ih-patterns.blogspot.de/p/introduction.html). Hiding patterns represent the core ideas of how secret data can be hidden in network transmissions. The core idea is that CCEAP allows students model the protocol structure in a way that they can represent covert channels.
+CCEAP implements a network protocol. The protocol is explicitly vulnerable against several so-called [hiding patterns](http://ih-patterns.blogspot.de/p/introduction.html). Hiding patterns represent the core ideas of how secret data can be hidden in network transmissions. The core idea is that CCEAP allows students to model the protocol structure in a way that it represents covert channels. In other words, CCEAP can be used to teach students covert channel techniques in an easy manner.
 
 ### Why use CCEAP?
 
-The key advantage of CCEAP is that it is based on hiding patterns. As shown in (Wendzel et al., 2015), more than hundred known network steganography methods can be represented by only 11 hiding patterns. Hence, it is enough to teach students these few hiding patterns instead of >100 hiding methods.
+The key advantage and unique feature of CCEAP is that it is based on hiding patterns. As shown in (Wendzel et al., 2015), more than hundred known network steganography methods can be represented by only 11 hiding patterns. Hence, it is enough to teach students these few hiding patterns instead of >130 hiding techniques.
 
 Another advantage of CCEAP is that basically all methods for hiding data in network transmissions can be explained using only one protocol (=CCEAP) instead of several network protocols (IP, TCP, UDP, HTTP, ...). For this reason, switching network protocols while explaining hiding methods to students is not necessary anymore. The protocol's structure is simple and self-explanatory and its implementation is kept at a minimum level of code lines to make it especially accessible to students.
 
@@ -99,7 +99,7 @@ All actions can be performed over the network or on the local host. The easiest 
 
 #### Example Walk-through for an Exercise
 
-Sample exercises are available [here](https://github.com/cdpxe/CCEAP/tree/master/sample_exercises). However, for now let us assume that the exercise given to the students was to create a covert channel that uses the [Reserved/Unused](http://ih-patterns.blogspot.de/p/blog-page_13.html) pattern. The students look up the pattern description, which tells:
+Sample exercises (incl. solutions) are available [here](https://github.com/cdpxe/CCEAP/tree/master/sample_exercises). However, for now let us assume that the exercise given to the students was to create a covert channel that uses the [Reserved/Unused](http://ih-patterns.blogspot.de/p/blog-page_13.html) pattern. The students look up the pattern description, which tells:
 
 *The covert channel encodes hidden data into a reserved or unused header/PDU element.*
 
@@ -151,6 +151,8 @@ received data (12 bytes):
 
 More detailed outputs will be provided when the server receives more complex packets from the client, e.g. packets containing options headers.
 
+More examples are available [here](https://github.com/cdpxe/CCEAP/tree/master/sample_exercises).
+
 ## Supported Hiding Patterns
 
 Currently, the below listed hiding patterns are supported by CCEAP.
@@ -172,7 +174,7 @@ Timing Channel Patterns:
 * [Inter-arrival Time](http://ih-patterns.blogspot.de/p/blog-page_40.html)
 * [Rate/Throughput](http://ih-patterns.blogspot.de/p/p9.html), indirectly supported via the *Interpacket Time* Pattern
 
-An explanation of how each pattern is addressed by CCEAP can moreover be found in our CCS'16 poster (Wendzel and Mazurczyk, 2016), cf. `Further Reading/Publications on CCEAP' section at the end of the document.
+An explanation of how each pattern is addressed by CCEAP can moreover be found in our CCS'16 poster (Wendzel and Mazurczyk, 2016), cf. *Further Reading* at the end of the document.
 
 ## Further Reading
 
