@@ -191,6 +191,7 @@ The following subsections provide a list of papers which are directly linked or 
 
 **Publications on Fundamentals of Network Covert Channels/Network Steganography:**
 
+- W. Mazurczyk, S. Wendzel: [Information Hiding – Challenges for Forensic Experts](https://cacm.acm.org/magazines/2018/1/223894-information-hiding/fulltext), Communications of the ACM, Vol. 61(1), pp. 86-94, January 2018. [Summarizing video](https://vimeo.com/245230404)
 - W. Mazurczyk, S. Wendzel, S. Zander, A. Houmansadr, K. Szczypiorski: [Information Hiding in Communication Networks](http://eu.wiley.com/WileyCDA/WileyTitle/productCd-1118861698.html), Wiley IEEE-Press, 2016.
 - S. Zander, G. Armitage, P. Branch: [A survey of covert channels and countermeasures in computer network protocols](http://researchbank.swinburne.edu.au/vital/access/services/Download/swin:9173/SOURCE2), Computing Surveys and Tutorials, IEEE, 2007.
 - S. Wendzel, W. Mazurczyk, L. Caviglione, M. Meier: [Hidden and Uncontrolled–On the Emergence of Network Steganographic Threats](https://www.researchgate.net/profile/Steffen_Wendzel/publication/263773592_Hidden_and_Uncontrolled_-_On_the_Emergence_of_Network_Steganographic_Threats/links/53eb38eb0cf2dc24b3cea87a.pdf), Proc. ISSE, Springer, 2014.
