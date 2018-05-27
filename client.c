@@ -6,7 +6,7 @@
  * for students. The tool demonstrates several network covert channel
  * vulnerabilities in a single communication protocol.
  *
- * Copyright (C) 2016-2017 Steffen Wendzel, steffen (at) wendzel (dot) de
+ * Copyright (C) 2016-2018 Steffen Wendzel, steffen (at) wendzel (dot) de
  *                    http://www.wendzel.de
  *
  * This program is free software: you can redistribute it and/or modify
@@ -68,6 +68,7 @@ main(int argc, char *argv[])
 	u_int32_t IAT_array[MAX_NUM_PREDEF_IATS] = { '\0' };
 	int IAT_array_elements = 0;
 	int IAT_set = 0;
+	int arg_c_set = 0;
 	
 	print_gpl();
 	
@@ -101,6 +102,7 @@ main(int argc, char *argv[])
 			/* number of packets to send */
 			if (atoi(optarg) >= 0 && atoi(optarg) < MAX_NUM_PACKETS) {
 				num_of_pkts_to_send = atoi(optarg);
+				arg_c_set = 1;
 			} else {
 				fprintf(stderr, "Number of packets to send is out of range (MAX=%i).\n", MAX_NUM_PACKETS);
 				exit(ERR_EXIT);
@@ -163,7 +165,9 @@ main(int argc, char *argv[])
 			}
 			if (sequence_number_array_elements > 0) {
 				sequence_set = 1;
-				num_of_pkts_to_send = sequence_number_array_elements;
+				if (!arg_c_set) {
+					num_of_pkts_to_send = sequence_number_array_elements;
+				}
 			}
 			break;
 		case 't':
@@ -201,9 +205,9 @@ main(int argc, char *argv[])
 			}
 			if (IAT_array_elements > 0) {
 				IAT_set = 1;
-				printf("Adjusting number of packets (-c) to %i to match timing parameters (-t). You can change this by using parameter -c behind parameter -t.\n",
-					IAT_array_elements);
-				num_of_pkts_to_send = IAT_array_elements;
+				if (!arg_c_set) {
+					num_of_pkts_to_send = IAT_array_elements;
+				}
 			}
 			break;
 		case 'p':
@@ -342,8 +346,11 @@ main(int argc, char *argv[])
 			int q;
 			
 			printf("* Sequence of sequence_numbers to use: ");
-			for (q = 0; q < sequence_number_array_elements; q++) {
-				printf("%d,", sequence_number_array[q]);
+			for (q = 0; q < num_of_pkts_to_send; q++) {
+				printf("%d%c",
+				 sequence_number_array[q % sequence_number_array_elements],
+				 (((q + 1) % sequence_number_array_elements) ? ',' : '/')
+				);
 			}
 			putchar('\n');
 		}
@@ -448,7 +455,7 @@ main(int argc, char *argv[])
 				pkt->sequence_number = 0;
 			}
 		} else { /* sequence mode */
-			pkt->sequence_number = sequence_number_array[cnt+1];
+			pkt->sequence_number = sequence_number_array[(cnt+1) % sequence_number_array_elements];
 		}
 	}
 	printf("\nsending done.\n");
