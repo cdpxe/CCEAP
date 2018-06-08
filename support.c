@@ -69,7 +69,7 @@ usage(int type)
 			"\n"
 			"*** Parameters specific for the CCEAP protocol:\n"
 			"-c x   Number of packets to send (default: 10)\n"
-			"-i x   Sequence number x to use for CCEAP\n"
+			"-i x   Initial sequence number x to use for CCEAP\n"
 			"-p x   Duplicate the packet with the sequence number x\n"
 			"-x x   Exclude the packet with the sequence number x\n"
 			"-s x   Use a pre defined sequence numbers given in x in the form:\n"

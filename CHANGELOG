@@ -1,6 +1,7 @@
 CHANGELOG for the CCEAP tool
 
 current (v. 0.6.0) : latest commit on 2018-05-27
+ * slightly improved client (help) output
  * fixed an error message in the client
  * increased number of packets that can be sent from 255 to 2048
  * add iat_encode tool to help encode messages as IAT values

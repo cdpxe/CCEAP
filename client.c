@@ -426,7 +426,7 @@ main(int argc, char *argv[])
 	for (cnt = 0; cnt < num_of_pkts_to_send; cnt ++) {
 	
 		if (exclude && pkt->sequence_number == exclude) {
-			putchar('E'); fflush(stdout);
+			printf("(Excluded Packet)"); fflush(stdout);
 			sleep(1);
 		} else {
 			if (send(sockfd, pkt, sizeof(cceap_header_t) + (sizeof(options_t) * num_options), 0) < 0)
@@ -441,7 +441,7 @@ main(int argc, char *argv[])
 		if (duplicate && pkt->sequence_number == duplicate) {
 			if (send(sockfd, pkt, sizeof(cceap_header_t) + (sizeof(options_t) * num_options), 0) < 0)
 				err(ERR_EXIT, "send");
-			putchar('D'); fflush(stdout);
+			printf("(Duplicated Packet)"); fflush(stdout);
 			if (IAT_set)
 				wait_IAT_before_send(IAT_array, IAT_array_elements);
 			else
