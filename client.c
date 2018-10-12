@@ -421,12 +421,12 @@ main(int argc, char *argv[])
 	memcpy(pkt + 1, &options_array, sizeof(options_t)*num_options);
 	
 	/* send main header + options in one chunk to destination */
-	printf("sending: ");
+	printf("Sending: ");
 
-	for (cnt = 0; cnt < num_of_pkts_to_send; cnt ++) {
+	for (cnt = 0; cnt < num_of_pkts_to_send; cnt++) {
 	
 		if (exclude && pkt->sequence_number == exclude) {
-			printf("(Excluded Packet)"); fflush(stdout);
+			printf("(Excluded packet)"); fflush(stdout);
 			sleep(1);
 		} else {
 			if (send(sockfd, pkt, sizeof(cceap_header_t) + (sizeof(options_t) * num_options), 0) < 0)
@@ -439,13 +439,20 @@ main(int argc, char *argv[])
 		}
 		
 		if (duplicate && pkt->sequence_number == duplicate) {
-			if (send(sockfd, pkt, sizeof(cceap_header_t) + (sizeof(options_t) * num_options), 0) < 0)
-				err(ERR_EXIT, "send");
-			printf("(Duplicated Packet)"); fflush(stdout);
-			if (IAT_set)
-				wait_IAT_before_send(IAT_array, IAT_array_elements);
-			else
-				sleep(1);
+			/* only duplicate if there is a packet left that we are allowed to send */
+			if ((cnt+1) < num_of_pkts_to_send) {
+				cnt++;
+				if (send(sockfd, pkt, sizeof(cceap_header_t) + (sizeof(options_t) * num_options), 0) < 0)
+					err(ERR_EXIT, "send");
+				printf("(Duplicated packet)"); fflush(stdout);
+				if (IAT_set)
+					wait_IAT_before_send(IAT_array, IAT_array_elements);
+				else
+					sleep(1);
+			} else {
+				printf("(Prevented packet duplication due to limit (%i packets)\n", num_of_pkts_to_send);
+				fflush(stdout);
+			}
 		}
 		
 		if (sequence_number_set) {
