@@ -48,7 +48,7 @@
 #include <math.h>
 #include <time.h>
 
-#define CCEAP_VER	"0.6.0"
+#define CCEAP_VER	"0.6.1"
 #define CCEAP_AUTHOR	"Steffen Wendzel, www.wendzel.de"
 #define ERR_EXIT	2
 #define OK_EXIT		0

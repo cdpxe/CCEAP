@@ -1,12 +1,14 @@
 CHANGELOG for the CCEAP tool
 
+current : 2018-10-12
+ * do not send more packets than allowed by -c when packets are duplicated; thanks to J. Kammerlander for reporting this issue
+
 v. 0.6.0 : 2018-06-12
  * slightly improved client (help) output (thanks to student feedback)
  * fixed an error message in the client
  * increased number of packets that can be sent from 255 to 2048
  * add iat_encode tool to help encode messages as IAT values
  * allow the combination of -c with -s; loop sequence numbers if  necessary and output all sequence numbers when -v is used
- * do not send more packets than allowed by -c when packets are duplicated
  * thanks to J. Kammerlander for reporting most of the issues for this release
 
 v. 0.5.2 : 2017-03-30
