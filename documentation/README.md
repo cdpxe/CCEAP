@@ -13,7 +13,7 @@ Please send requests and feedback to the author: Steffen Wendzel, [www.wendzel.d
 ## Introduction
 
 ### Basics of Information Hiding
-The *Covert Channel Educational Analysis Protocol* (CCEAP) is a network protocol designed for teaching covert channels to professionals and students. For an introduction on network covert channels (network steganography), please have a look at [this publication](https://www.researchgate.net/profile/Steffen_Wendzel/publication/263773592_Hidden_and_Uncontrolled_-_On_the_Emergence_of_Network_Steganographic_Threats/links/53eb38eb0cf2dc24b3cea87a.pdf).
+The *Covert Channel Educational Analysis Protocol* (CCEAP) is a network protocol designed for teaching covert channels to professionals and students. It can also be used a simple covert channel traffic generator. For an introduction on network covert channels (network steganography), please have a look at [this publication](https://www.researchgate.net/profile/Steffen_Wendzel/publication/263773592_Hidden_and_Uncontrolled_-_On_the_Emergence_of_Network_Steganographic_Threats/links/53eb38eb0cf2dc24b3cea87a.pdf).
 
 **Videos:**
 - [Quick 4 min Introduction](https://www.youtube.com/watch?v=LoPf06rMXWQ&t=5s) into Information Hiding in Computer Networks
@@ -175,6 +175,10 @@ Timing Channel Patterns:
 * [Rate/Throughput](http://ih-patterns.blogspot.de/p/p9.html), indirectly supported via the *Interpacket Time* Pattern
 
 An explanation of how each pattern is addressed by CCEAP can moreover be found in our CCS'16 poster (Wendzel and Mazurczyk, 2016), cf. *Further Reading* at the end of the document.
+
+## Using CCEAP as a Traffic Generator
+
+The tool can be used easily as a traffic generator, also when the semantics of the actual protocol are not required. For instance, the packet size can be manipulated to simulate packet-size covert channels (size modulation pattern) and with the provided tool `iat_encode`, one can easily create timing channels (running `./client -t ´./iat_encode [input-file] [low-time] [high-time]´`, where the time values must be provided in units of ms. In fact, the author used CCEAP to generate traffic for several of his papers.
 
 ## Further Reading
 
