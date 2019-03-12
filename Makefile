@@ -46,7 +46,7 @@ all : $(OBJECTS)
 	$(CC) $(BUILDFLAGS) -o seq_encode seq_encode.o
 
 clean : 
-	rm -vf client server iat_encode a.out *~ *.core core $(OBJECTS)
+	rm -vf client server iat_encode seq_encode a.out *~ *.core core $(OBJECTS)
 
 runcli :
 	./client -P $(DEFAULTPORT) -D 127.0.0.1 -d Asciii -i 123 -o 1,2,3/4,5,6/7,8,9/ -v
