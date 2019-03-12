@@ -178,7 +178,14 @@ An explanation of how each pattern is addressed by CCEAP can moreover be found i
 
 ## Using CCEAP as a Traffic Generator
 
-The tool can be used easily as a traffic generator, also when the semantics of the actual protocol are not required. For instance, the packet size can be manipulated to simulate packet-size covert channels (size modulation pattern) and with the provided tool `iat_encode`, one can easily create timing channels (running `./client -t ´./iat_encode [input-file] [low-time] [high-time]´`, where the time values must be provided in units of ms. In fact, the author used CCEAP to generate traffic for several of his papers.
+The tool can be used easily as a traffic generator, also when the semantics of the actual protocol are not required. For instance, the packet size can be manipulated to simulate packet-size covert channels ([Size Modulation](http://ih-patterns.blogspot.de/p/p1-size-modulation-pattern.html) pattern). In fact, the author used CCEAP to generate traffic for some of his own papers.
+
+#### Inofficial add-ons to automatically encode files into inter-arrival times / sequence numbers
+With the inofficially provided tool `iat_encode` (encodes an input file into timing values), one can easily create timing channels (running `./client -t ´./iat_encode [input-file] [low-time] [high-time]´`, where the time values must be provided in units of ms. This would then represent the [Inter-arrival Time](http://ih-patterns.blogspot.de/p/blog-page_40.html) pattern.
+
+Similarly, the [Manipulated Message Ordering](http://ih-patterns.blogspot.de/p/p10-pdu-order-pattern.html) pattern can be represented using `./seq_encode [input-file] 256 2` with parameter `-s` (instead of `./iat_encode` with parameter `-t`). The value `256` tells the tool the maximum allowed sequence number (in CCEAP, the sequence number field has 8 bits, so we need to use all sequence numbers *mod 256*) and the `2` represents the number of sequence numbers to be swapped (only the value 2 is supported). In other words, there is no need to alter any of these two numbers.
+
+However, *both tools are not officially part of CCEAP and they are not necessary to realize these patterns with CCEAP, i.e. they are just additional tools to support users*.
 
 ## Further Reading
 
