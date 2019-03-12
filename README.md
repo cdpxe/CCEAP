@@ -14,16 +14,15 @@ First, start the server, e.g. on your local host: `./server -P 9999`. This lets 
 Then, connect with the client: `./client -D 127.0.0.1 -P 9999`. This will make the client send ten simple standard messages to your server. The server should display the received packets' meta-data.
 
 #### Covert Timing Channel, Sample Traffic Generator
-Now, let us create a simple covert timing channel that we use to transfer the file `/etc/hosts`. And we want to encode 1 and 0 bits with 500ms and 1000ms. Therefore, we start the server again, and then run the client as follows using CCEAP's `iat_encode` tool which encodes files into inter-arrival times (this would represent the *Inter-packet Times* pattern):
+Now, let us create a simple covert timing channel that we use to transfer the file `/etc/hosts`. And we want to encode 1 and 0 bits with 500ms and 1000ms. Therefore, we start the server again, and then run the client as follows using CCEAP's `iat_encode` tool which encodes files into inter-arrival times (this would represent the [Inter-arrival Time](http://ih-patterns.blogspot.de/p/blog-page_40.html) pattern):
 
 `./client -D 127.0.0.1 -P 9999 -t ´./iat_encode /etc/hosts 500 1000´`
 
 Of course, one could also use `dd` together with `/dev/random` as a source of randomness to create a file with random bits and use this file instead of `/etc/hosts`.
-
-Similarly, the *PDU Order pattern* can be represented using `./seq_encode /etc/hosts 256 2` instead of `./iat_encode 500 1000`. However, *both tools are not officially part of CCEAP and they are not necessary to realize these patterns with CCEAP, i.e. they are just additional tools to support users*.
+Similarly, the [Manipulated Message Ordering](http://ih-patterns.blogspot.de/p/p10-pdu-order-pattern.html) pattern can be represented using `./seq_encode /etc/hosts 256 2` instead of `./iat_encode 500 1000`. Check the [documentation](https://github.com/cdpxe/CCEAP/tree/master/documentation) for details.
 
 More parameters of `client` can be obtained by running `./client -h`.
 
 #### More Examples
 
-Additional examples can be found in the `sample_exercises` directory and in the documentation.
+Additional examples can be found in the [sample_exercises](https://github.com/cdpxe/CCEAP/tree/master/sample_exercises) directory and in the documentation.
