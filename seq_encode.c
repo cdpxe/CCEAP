@@ -26,10 +26,9 @@ int main(int argc, char *argv[])
 	FILE *fp;
 	int cur_seq = 0;
 	char byte[1];
-	int maxval = 256; /* a header field has a max. value it can contain,
-			    * in CCEAP it is 8 bits. */
-	int num_symbols = 2; /* a covert channel needs at least 2 values but
-			      * can also have 4 or 8 symbols here. */
+	int maxval = 256; /* A header field has a max. value it can contain,
+			   * in CCEAP it is 8 bits for the sequence no. field. */
+	int num_symbols = 2; /* A covert channel needs at least 2 symbols. */
 	int first = 1;
 	extern char *__progname;
 
@@ -50,7 +49,7 @@ int main(int argc, char *argv[])
 		if (first)
 			first = 0;
 		else
-			PRINT_COMMA /* comma behind every new value */
+			PRINT_COMMA /* comma behind every new byte */
 		
 		if (num_symbols == 2) {
 			CHK_BIT (byte[0] & 0x01) PRINT_COMMA
