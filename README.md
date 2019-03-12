@@ -16,9 +16,11 @@ Then, connect with the client: `./client -D 127.0.0.1 -P 9999`. This will make t
 #### Covert Timing Channel, Sample Traffic Generator
 Now, let us create a simple covert timing channel that we use to transfer the file `/etc/hosts`. And we want to encode 1 and 0 bits with 500ms and 1000ms. Therefore, we start the server again, and then run the client as follows using CCEAP's `iat_encode` tool which encodes files into inter-arrival times (this would represent the *Inter-packet Times* pattern):
 
-`./client -D 127.0.0.1 -P 9999 -c 100 -t ´./iat_encode /etc/hosts 500 1000´`
+`./client -D 127.0.0.1 -P 9999 -t ´./iat_encode /etc/hosts 500 1000´`
 
 Of course, one could also use `dd` together with `/dev/random` as a source of randomness to create a file with random bits and use this file instead of `/etc/hosts`.
+
+More parameters of `client` can be obtained by running `./client -h`.
 
 #### More Examples
 
