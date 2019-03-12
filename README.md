@@ -20,7 +20,7 @@ Now, let us create a simple covert timing channel that we use to transfer the fi
 
 Of course, one could also use `dd` together with `/dev/random` as a source of randomness to create a file with random bits and use this file instead of `/etc/hosts`.
 
-Similarly, the PDU Order pattern can be represented using `./seq_encode /etc/hosts 256 2` instead of `./iat_encode 500 1000`. However, *both tools are not officially part of CCEAP and they are not necessary to realize these patterns with CCEAP, i.e. they are just additional tools to support users*.
+Similarly, the *PDU Order pattern* can be represented using `./seq_encode /etc/hosts 256 2` instead of `./iat_encode 500 1000`. However, *both tools are not officially part of CCEAP and they are not necessary to realize these patterns with CCEAP, i.e. they are just additional tools to support users*.
 
 More parameters of `client` can be obtained by running `./client -h`.
 
