@@ -4,7 +4,7 @@
  * This script can be used as a parameter for the CCEAP client.
  *
  * Use the following form:
- * $ ./client -t `./iat_encode [input file] [low time value] [high time value]`
+ * $ ./client -t `./iat_encode [input file] [low time value (ms)] [high time value (ms)]`
  * e.g.:
  * $ ./client -t `./iat_encode message.txt 10 20`
  */
@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 	extern char *__progname;
 
 	if (argc <= 3) {
-		fprintf(stderr, "usage: %s [input filename] [low_time] [high_time]\n", __progname);
+		fprintf(stderr, "usage: %s [input filename] [low_time (ms)] [high_time (ms)]\n", __progname);
 		exit(1);
 	}
 	if ((fp = fopen(argv[1], "r")) == NULL) {

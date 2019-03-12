@@ -31,7 +31,7 @@ CC=gcc
 HEADERS=main.h
 #DEBUGFLAGS=-g -ggdb
 CFLAGS=-Wall -W -Wextra -Wshadow -c $(DEBUGFLAGS)
-OBJECTS=client.o support.o server.o iat_encode.o
+OBJECTS=client.o support.o server.o iat_encode.o seq_encode.o
 BUILDFLAGS=-O
 SERVERBUILDFLAGS=-lm
 .SUFFIXES : .c .o
@@ -43,6 +43,7 @@ all : $(OBJECTS)
 	$(CC) $(BUILDFLAGS) -o client client.o support.o
 	$(CC) $(BUILDFLAGS) $(SERVERBUILDFLAGS) -o server server.o support.o
 	$(CC) $(BUILDFLAGS) -o iat_encode iat_encode.o
+	$(CC) $(BUILDFLAGS) -o seq_encode seq_encode.o
 
 clean : 
 	rm -vf client server iat_encode a.out *~ *.core core $(OBJECTS)
