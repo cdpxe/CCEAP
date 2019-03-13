@@ -31,7 +31,7 @@ CC=gcc
 HEADERS=main.h
 #DEBUGFLAGS=-g -ggdb
 CFLAGS=-Wall -W -Wextra -Wshadow -c $(DEBUGFLAGS)
-OBJECTS=client.o support.o server.o iat_encode.o seq_encode.o
+OBJECTS=client.o support.o server.o iat_encode.o seq_encode.o rand_seq.o
 BUILDFLAGS=-O
 SERVERBUILDFLAGS=-lm
 .SUFFIXES : .c .o
@@ -44,9 +44,10 @@ all : $(OBJECTS)
 	$(CC) $(BUILDFLAGS) $(SERVERBUILDFLAGS) -o server server.o support.o
 	$(CC) $(BUILDFLAGS) -o iat_encode iat_encode.o
 	$(CC) $(BUILDFLAGS) -o seq_encode seq_encode.o
+	$(CC) $(BUILDFLAGS) -o rand_seq rand_seq.o
 
 clean : 
-	rm -vf client server iat_encode seq_encode a.out *~ *.core core $(OBJECTS)
+	rm -vf client server iat_encode seq_encode rand_seq a.out *~ *.core core $(OBJECTS)
 
 runcli :
 	./client -P $(DEFAULTPORT) -D 127.0.0.1 -d Asciii -i 123 -o 1,2,3/4,5,6/7,8,9/ -v
