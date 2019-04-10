@@ -104,7 +104,8 @@ main(int argc, char *argv[])
 				num_of_pkts_to_send = atoi(optarg);
 				arg_c_set = 1;
 			} else {
-				fprintf(stderr, "Number of packets to send is out of range (MAX=%i).\n", MAX_NUM_PACKETS);
+				fprintf(stderr, "Number of packets to send is out of range (MAX=%i).\n",
+					MAX_NUM_PACKETS);
 				exit(ERR_EXIT);
 			}
 			break;
@@ -148,14 +149,18 @@ main(int argc, char *argv[])
 					
 					digit = token[0];
 					if (isdigit(digit) == 0) {
-						fprintf(stderr, "in parameter -s: '%c' is not a digit\n", token[0]);
+						fprintf(stderr, "in parameter -s: '%c' is not a digit\n",
+							token[0]);
 						exit(ERR_EXIT);
 					}
 					
 					sequence_number_array[sequence_number_array_elements] = atoi(token);
 					sequence_number_array_elements++;
 					if (sequence_number_array_elements > MAX_NUM_PREDEF_SEQNOS) {
-						fprintf(stderr, "Too many sequence numbers (%i but max is %i) used in -s\n", sequence_number_array_elements, MAX_NUM_PREDEF_SEQNOS);
+						fprintf(stderr, "Too many sequence numbers "
+							"(%i but max is %i) used in -s\n",
+							sequence_number_array_elements,
+							MAX_NUM_PREDEF_SEQNOS);
 						exit(ERR_EXIT);
 					} /*else {
 						fprintf(stderr, "sequence_number_array_elements=%d <= %d\n",
@@ -188,7 +193,8 @@ main(int argc, char *argv[])
 					
 					digit = token[0];
 					if (isdigit(digit) == 0) {
-						fprintf(stderr, "in parameter -t: '%c' is not a digit\n", token[0]);
+						fprintf(stderr, "in parameter -t: '%c' is not a digit\n",
+							token[0]);
 						exit(ERR_EXIT);
 					}
 					
@@ -260,7 +266,8 @@ main(int argc, char *argv[])
 						int digit;
 						
 						if (num_elements == MAX_NUM_OPTIONS) {
-							fprintf(stderr, "too many options (max: %d)\n", MAX_NUM_OPTIONS);
+							fprintf(stderr, "too many options (max: %d)\n",
+								MAX_NUM_OPTIONS);
 							exit(ERR_EXIT);
 						}
 						
@@ -270,7 +277,8 @@ main(int argc, char *argv[])
 						//printf("\ttoken_2: %s\n", token_2);
 						digit = token_2[0];
 						if (isdigit(digit) == 0) {
-							fprintf(stderr, "in parameter -o: '%c' is not a digit\n", token_2[0]);
+							fprintf(stderr, "in parameter -o: '%c' is not a digit\n",
+								token_2[0]);
 							exit(ERR_EXIT);
 						}
 						switch (num_elements) {
@@ -285,8 +293,8 @@ main(int argc, char *argv[])
 							num_options++;
 							break;
 						default:
-							fprintf(stderr, "more than three parameters not permitted per "
-									"option for parameter -o\n");
+							fprintf(stderr, "more than three parameters not permitted"
+									" per option for parameter -o\n");
 							exit(ERR_EXIT);
 							break;
 						}
