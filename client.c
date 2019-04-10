@@ -155,7 +155,7 @@ main(int argc, char *argv[])
 					sequence_number_array[sequence_number_array_elements] = atoi(token);
 					sequence_number_array_elements++;
 					if (sequence_number_array_elements > MAX_NUM_PREDEF_SEQNOS) {
-						fprintf(stderr, "Too many sequence numbers used in -s\n");
+						fprintf(stderr, "Too many sequence numbers (%i but max is %i) used in -s\n", sequence_number_array_elements, MAX_NUM_PREDEF_SEQNOS);
 						exit(ERR_EXIT);
 					} /*else {
 						fprintf(stderr, "sequence_number_array_elements=%d <= %d\n",

@@ -61,7 +61,6 @@ int four_array[24][4] = {
 int main(int argc, char *argv[])
 {
 	int cur_seq = 0;
-	char byte[1];
 	int num_pairs_to_gen = 2; /* how many seq. pairs should be generated? */
 	int max_seq_val = 256; /* A header field has a max. value it can contain,
 			   * in CCEAP it is 8 bits for the sequence no. field. */
