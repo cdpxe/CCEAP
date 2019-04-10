@@ -26,7 +26,7 @@
 # *
 # */
 
-DEFAULTPORT=2222
+DEFAULTPORT=9999
 CC=gcc
 HEADERS=main.h
 #DEBUGFLAGS=-g -ggdb
@@ -54,6 +54,9 @@ runcli :
 
 runser :
 	./server -P $(DEFAULTPORT) -v
+
+runserloop :
+	while [ 1 ]; do ./server -P $(DEFAULTPORT) -v; sleep 1; done
 
 count :
 	wc -l *.c
