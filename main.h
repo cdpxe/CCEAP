@@ -63,6 +63,7 @@ typedef struct {
 	u_int8_t dummy;				/* dummy value to end up with 32 bytes */
 } options_t;
 #define MAX_NUM_OPTIONS 32
+#define DEFAULT_IAT_VAL	1000000			/* 1sec */
 
 typedef struct {
 	#define MAX_NUM_PREDEF_SEQNOS 16384

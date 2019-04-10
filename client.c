@@ -67,12 +67,13 @@ main(int argc, char *argv[])
 	int sequence_number_array_elements = 0;
 	u_int32_t IAT_array[MAX_NUM_PREDEF_IATS] = { '\0' };
 	int IAT_array_elements = 0;
+	u_int32_t default_iat = DEFAULT_IAT_VAL;
 	int IAT_set = 0;
 	int arg_c_set = 0;
 	
 	print_gpl();
 	
-	while ((ch = getopt(argc, argv, "vhP:D:d:i:o:u:p:x:c:s:t:")) != -1) {
+	while ((ch = getopt(argc, argv, "vhP:D:d:i:o:u:p:x:c:s:t:T:")) != -1) {
 		switch (ch) {
 		case 'v':
 			verbose = 1;
@@ -177,6 +178,10 @@ main(int argc, char *argv[])
 			break;
 		case 't':
 			/* define IATs */
+			if (IAT_set || default_iat != DEFAULT_IAT_VAL) {
+				fprintf(stderr, "IAT values were already set by previous parameter(s).\n");
+				exit(ERR_EXIT);
+			}
 			{
 				char *token;
 				char *ptr_optarg;
@@ -214,6 +219,19 @@ main(int argc, char *argv[])
 				if (!arg_c_set) {
 					num_of_pkts_to_send = IAT_array_elements;
 				}
+			}
+			break;
+		case 'T':
+			if (IAT_set || default_iat != DEFAULT_IAT_VAL) {
+				fprintf(stderr, "IAT values were already set by previous parameter(s).\n");
+				exit(ERR_EXIT);
+			}
+			
+			if (atoi(optarg) >= 0 && atoi(optarg) <= 10000) {
+				default_iat = atoi(optarg)*1000;
+			} else {
+				fprintf(stderr, "Value for -T must be within 1 and 10000.\n");
+				exit(ERR_EXIT);
 			}
 			break;
 		case 'p':
@@ -435,7 +453,10 @@ main(int argc, char *argv[])
 	
 		if (exclude && pkt->sequence_number == exclude) {
 			printf("(Excluded packet)"); fflush(stdout);
-			sleep(1);
+			if (IAT_set)
+				wait_IAT_before_send(IAT_array, IAT_array_elements);
+			else
+				usleep(default_iat);
 		} else {
 			if (send(sockfd, pkt, sizeof(cceap_header_t) + (sizeof(options_t) * num_options), 0) < 0)
 				err(ERR_EXIT, "send");
@@ -443,7 +464,7 @@ main(int argc, char *argv[])
 			if (IAT_set)
 				wait_IAT_before_send(IAT_array, IAT_array_elements);
 			else
-				sleep(1);
+				usleep(default_iat);
 		}
 		
 		if (duplicate && pkt->sequence_number == duplicate) {
@@ -456,7 +477,7 @@ main(int argc, char *argv[])
 				if (IAT_set)
 					wait_IAT_before_send(IAT_array, IAT_array_elements);
 				else
-					sleep(1);
+					usleep(default_iat);
 			} else {
 				printf("(Prevented packet duplication due to limit (%i packets)\n", num_of_pkts_to_send);
 				fflush(stdout);

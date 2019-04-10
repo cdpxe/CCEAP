@@ -66,6 +66,8 @@ usage(int type)
 			"-v     Activate verbose mode\n"
 			"-t x   Use the inter-arrival times in 'x' between packets (x should\n"
 			"       be given in the format 'Time_1,Time_2,...' (in ms)\n"
+			"-T x   Use inter-arrival time x[ms] for *all* packets (default is\n"
+			"       1000ms, i.e. 1sec)\n"
 			"\n"
 			"*** Parameters specific for the CCEAP protocol:\n"
 			"-c x   Number of packets to send (default: 10)\n"
