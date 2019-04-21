@@ -181,17 +181,18 @@ An explanation of how each pattern is addressed by CCEAP can moreover be found i
 The tool can be used easily as a traffic generator, also when the semantics of the actual protocol are not required. For instance, the packet size can be manipulated to simulate packet-size covert channels ([Size Modulation](http://ih-patterns.blogspot.de/p/p1-size-modulation-pattern.html) pattern). In fact, the author used CCEAP to generate traffic for some of his own papers.
 
 #### Inofficial add-ons to automatically encode files into inter-arrival times / sequence numbers
+
 With the inofficially provided tool `iat_encode` (encodes an input file into timing values), one can easily create timing channels (running `./client -t ´./iat_encode [input-file] [low-time] [high-time]´`, where the time values must be provided in units of ms. This would then represent the [Inter-arrival Time](http://ih-patterns.blogspot.de/p/blog-page_40.html) pattern.
 
 Similarly, the [Manipulated Message Ordering](http://ih-patterns.blogspot.de/p/p10-pdu-order-pattern.html) pattern can be represented using `./seq_encode [input-file] 256 2` with parameter `-s` (instead of `./iat_encode` with parameter `-t`). The value `256` tells the tool the maximum allowed sequence number (in CCEAP, the sequence number field has 8 bits, so we need to use all sequence numbers *mod 256*) and the `2` represents the number of sequence numbers to be swapped (only the value 2 is supported). In other words, there is no need to alter any of these two numbers.
 
-However, *both tools are not officially part of CCEAP and they are not necessary to realize these patterns with CCEAP, i.e. they are just additional tools to support users*.
+However, *both tools are not officially part of CCEAP and they are not necessary to realize these patterns with CCEAP, i.e. they are just additional tools to make it a bit easier to use CCEAP*.
 
 ## Further Reading
 
 The following subsections provide a list of papers which are directly linked or related to CCEAP.
 
-**Publications on CCEAP:**
+**Publications about CCEAP:**
 
 - S. Wendzel and W. Mazurczyk: [An Educational Network Protocol for Covert Channel Analysis Using Patterns (poster)](http://dl.acm.org/citation.cfm?id=2989037&CFID=856548232&CFTOKEN=62229078), in Proc. ACM Conference on Computer and Communications Security (CCS), pp. 1739-1741, ACM, 2016. You can also download the conference poster [here](https://www.researchgate.net/publication/309284322_Poster_file_for_S_Wendzel_and_W_Mazurczyk_An_Educational_Network_Protocol_for_Covert_Channel_Analysis_Using_Patterns_poster_in_Proc_ACM_CCS_2016), it summarizes the content of the actual paper.
 
