@@ -10,6 +10,7 @@ v. 0.6.1 : 2019-04-21 (Easter)
  * do not send more packets than allowed by -c when packets are duplicated; thanks to J. Kammerlander for reporting this issue
  * increased maximum number of packets that can be sent
  * make the tool compile under Debian (use -lrt)
+ * added `runserloop` target in Makefile to run the server in a loop
 
 v. 0.6.0 : 2018-06-12
  * slightly improved client (help) output (thanks to student feedback)
