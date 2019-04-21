@@ -32,7 +32,7 @@ HEADERS=main.h
 #DEBUGFLAGS=-g -ggdb
 CFLAGS=-Wall -W -Wextra -Wshadow -c $(DEBUGFLAGS)
 OBJECTS=client.o support.o server.o iat_encode.o seq_encode.o rand_seq.o
-BUILDFLAGS=-O
+BUILDFLAGS=-O -lrt
 SERVERBUILDFLAGS=-lm
 .SUFFIXES : .c .o
 
