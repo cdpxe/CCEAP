@@ -1,17 +1,22 @@
 CHANGELOG for the CCEAP tool
 
-current : 2019-04-10
+current : 2019-04-21
+ * nothing new so far.
+
+v. 0.6.1 : 2019-04-21 (Easter)
  * new parameter -T for provision of a default IAT value used for *all* packets
  * better error handling and error reporting
  * add random sequence number tool *rand_seq* for use with -s
  * do not send more packets than allowed by -c when packets are duplicated; thanks to J. Kammerlander for reporting this issue
+ * increased maximum number of packets that can be sent
+ * make the tool compile under Debian (use -lrt)
 
 v. 0.6.0 : 2018-06-12
  * slightly improved client (help) output (thanks to student feedback)
  * fixed an error message in the client
  * increased number of packets that can be sent from 255 to 2048
  * add iat_encode tool to help encode messages as IAT values
- * allow the combination of -c with -s; loop sequence numbers if  necessary and output all sequence numbers when -v is used
+ * allow the combination of -c with -s; loop sequence numbers if necessary and output all sequence numbers when -v is used
  * thanks to J. Kammerlander for reporting most of the issues for this release
 
 v. 0.5.2 : 2017-03-30
