@@ -33,6 +33,11 @@ Another advantage of CCEAP is that basically all methods for hiding data in netw
 
 The tool requires `gcc` and Linux (or similar, e.g. [Cygwin](https://cygwin.com) under Windows). Run `make` to build the two components of the tool: *`client`* and *`server`*.
 
+#### A first test-run
+
+Open two terminals. Run `make runser` in one terminal to run the server (alternatively, run `./server -P 9999 -v`) and run `make runcli` in the other terminal (alternatively, run `./client -D 127.0.0.1 -P 9999 -v`). You should see some data transmission going on that will transfer a couple of packets and then terminate. The parameter `-v` is just use for verbose output while `-D` and `-P` specify server IP and TCP port to use.
+
+
 ## Teaching Process in a Nutshell
 
 The educational process is split into two parts. First, a lecturer explains the fundamentals of CCEAP and network steganography to the students. Second, students perform their exercises, which are afterwards evaluated by the teacher.
