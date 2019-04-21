@@ -1,6 +1,7 @@
-/* A dirty and undocumented hack to create randomized sequence numbers for testing
+/* Very simple tool to generate randomized sequence numbers for testing
  * purposes.
  * License: GPLv3, see `LICENSE' file.
+ * (C) 2019 Steffen Wendzel <wendzel (at) hs-worms (dot) de>
  *
  * This script can be used as a parameter for the CCEAP client.
  */
@@ -71,6 +72,8 @@ int main(int argc, char *argv[])
 
 	if (argc <= 3) {
 		fprintf(stderr, "usage: %s [#pairs to generate] [max_seq_val] [symbols (2||3||4)]\n", __progname);
+		fprintf(stderr, "Please note that you can use the tool in combination with CCEAP\n"
+				"the following way: ./client -D ... -P ... -s `./%s [parameters]`\n", __progname);
 		exit(1);
 	}
 	num_pairs_to_gen = atoi(argv[1]);
