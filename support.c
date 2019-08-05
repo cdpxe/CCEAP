@@ -6,7 +6,7 @@
  * for students. The tool demonstrates several network covert channel
  * vulnerabilities in a single communication protocol.
  *
- * Copyright (C) 2016-2018 Steffen Wendzel, steffen (at) wendzel (dot) de
+ * Copyright (C) 2016-2019 Steffen Wendzel, steffen (at) wendzel (dot) de
  *                    http://www.wendzel.de
  *
  * This program is free software: you can redistribute it and/or modify
@@ -28,6 +28,8 @@
 
 #include "main.h"
 
+#define OUTPUT_PARAMETER_Q "-q     Suppress welcome message; useful if CCEAP runs in a loop\n"
+
 void
 *calloc_exit(int size, int elem)
 {
@@ -44,11 +46,16 @@ void
 void
 print_gpl(void)
 {
-	printf("CCEAP protocol implementation. Copyright (C) 2016 Steffen Wendzel.\n"
+	printf("CCEAP protocol implementation. Copyright (C) 2016-2019 Steffen Wendzel.\n"
 	       "This program comes with ABSOLUTELY NO WARRANTY; for details see "
 	       "LICENSE file.\n"
 	       "This is free software, and you are welcome to redistribute it "
-	       "under certain conditions;\nfor details see LICENSE file.\n\n");
+	       "under certain conditions;\nfor details see LICENSE file.\n\n"
+	       "Hint: cite this tool/paper as:\n"
+	       "S. Wendzel, W. Mazurczyk: An Educational Network Protocol for\n"
+	       "Covert Channel Analysis Using Patterns, in Proc. ACM Conference on\n"
+	       "Computer and Communications Security (CCS), pp. 1739-1741, 2016.\n\n"
+	       "Hint: use ./server -q to prevent CCEAP from showing this message.\n\n");
 }
 
 void
@@ -63,6 +70,7 @@ usage(int type)
 			"-D x   Destination IP x to connect to\n"
 			"-P x   TCP port x to connect to\n"
 			"-h     Provide an overview of supported parameters (this output)\n"
+			OUTPUT_PARAMETER_Q
 			"-v     Activate verbose mode\n"
 			"-t x   Use the inter-arrival times in 'x' between packets (x should\n"
 			"       be given in the format 'Time_1,Time_2,...' (in ms)\n"
@@ -95,7 +103,7 @@ usage(int type)
 			"-h     Provide an overview of supported parameters (this output)\n"
 			"-v     Activate verbose mode\n"
 			"-P x   TCP port x to listen to\n"
-			"-q     Suppress welcome messages; useful if server runs in a loop\n"
+			OUTPUT_PARAMETER_Q
 			"--------------------------------------------------------------\n"
 		);
 		break;

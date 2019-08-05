@@ -6,7 +6,7 @@
 # * for students. The tool demonstrates several network covert channel
 # * vulnerabilities in a single communication protocol.
 # *
-# * Copyright (C) 2016-2017 Steffen Wendzel, steffen (at) wendzel (dot) de
+# * Copyright (C) 2016-2019 Steffen Wendzel, steffen (at) wendzel (dot) de
 # *                    http://www.wendzel.de
 # *
 # * This program is free software: you can redistribute it and/or modify
@@ -56,7 +56,7 @@ runser :
 	./server -P $(DEFAULTPORT) -v
 
 runserloop :
-	while [ 1 ]; do ./server -P $(DEFAULTPORT) -v; sleep 1; done
+	while [ 1 ]; do ./server -q -P $(DEFAULTPORT) -v; sleep 1; done
 
 count :
 	wc -l *.c

@@ -6,7 +6,7 @@
  * for students. The tool demonstrates several network covert channel
  * vulnerabilities in a single communication protocol.
  *
- * Copyright (C) 2016-2018 Steffen Wendzel, steffen (at) wendzel (dot) de
+ * Copyright (C) 2016-2019 Steffen Wendzel, steffen (at) wendzel (dot) de
  *                    http://www.wendzel.de
  *
  * This program is free software: you can redistribute it and/or modify
@@ -70,10 +70,9 @@ main(int argc, char *argv[])
 	u_int32_t default_iat = DEFAULT_IAT_VAL;
 	int IAT_set = 0;
 	int arg_c_set = 0;
-	
-	print_gpl();
-	
-	while ((ch = getopt(argc, argv, "vhP:D:d:i:o:u:p:x:c:s:t:T:")) != -1) {
+	int quiet = 0;
+		
+	while ((ch = getopt(argc, argv, "vhP:D:d:i:o:u:p:x:c:s:t:T:q")) != -1) {
 		switch (ch) {
 		case 'v':
 			verbose = 1;
@@ -327,13 +326,23 @@ main(int argc, char *argv[])
 				}
 			}
 			break;
+		case 'q':
+			quiet = 1;
+			break;
 		case 'h':
 		default:
 			usage(USAGE_CLIENT);
 			/* NOTREACHED */
 		}
 	}
-
+	
+	if (!quiet)
+		print_gpl();
+	else {
+		fprintf(stdout, "CCEAP - Covert Channel Educational Analysis Protocol (Server)\n");
+		fprintf(stdout, "   => version: " CCEAP_VER ", written by: " CCEAP_AUTHOR "\n");
+	}
+	
 	/* basic checks of provided parameters */
 	if (dst_port >= 0xffff || dst_port < 1) {
 		fprintf(stderr, "destination port out of range or not specified.\n");
