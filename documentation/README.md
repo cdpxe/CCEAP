@@ -196,9 +196,14 @@ However, *both tools are not officially part of CCEAP and they are not necessary
 
 The following subsections provide a list of papers which are directly linked or related to CCEAP.
 
-**Publications about CCEAP:**
+**Publications *about* CCEAP:**
 
 - S. Wendzel and W. Mazurczyk: [An Educational Network Protocol for Covert Channel Analysis Using Patterns (poster)](http://dl.acm.org/citation.cfm?id=2989037&CFID=856548232&CFTOKEN=62229078), in Proc. ACM Conference on Computer and Communications Security (CCS), pp. 1739-1741, ACM, 2016. You can also download the conference poster [here](https://www.researchgate.net/publication/309284322_Poster_file_for_S_Wendzel_and_W_Mazurczyk_An_Educational_Network_Protocol_for_Covert_Channel_Analysis_Using_Patterns_poster_in_Proc_ACM_CCS_2016), it summarizes the content of the actual paper.
+
+**Publications *using* CCEAP:**
+
+- S. Wendzel: Protocol-independent Detection of “Messaging Ordering” Network Covert Channels, in Proc. ARES 2019, CUING Workshop, ACM, 2019.
+- Send me an e-mail in case you used CCEAP for your research and I will add your research here!
 
 **Publications on Information Hiding Patterns:**
 
