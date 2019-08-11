@@ -8,16 +8,17 @@ Please send requests and feedback to the author: Steffen Wendzel, [www.wendzel.d
 
 ## Kickstart - a few Examples:
 
-#### First Start
+#### 1. A First Start
 First, start the server, e.g. on your local host: `./server -P 9999`. This lets the server run on IP 127.0.0.1, port 9999.
 
 Then, connect with the client: `./client -D 127.0.0.1 -P 9999`. This will make the client send ten simple standard messages to your server. The server should display the received packets' meta-data.
 
-#### Covert Timing Channel, Sample Traffic Generator
+#### 2. Covert Timing Channel
 Now, let us create a simple covert timing channel that we use to transfer the file `/etc/hosts`. And we want to encode 1 and 0 bits with 500ms and 1000ms. Therefore, we start the server again, and then run the client as follows using CCEAP's `iat_encode` tool which encodes files into inter-arrival times (this would represent the [Inter-arrival Time](http://ih-patterns.blogspot.de/p/blog-page_40.html) pattern):
 
 `./client -D 127.0.0.1 -P 9999 -t ´./iat_encode /etc/hosts 500 1000´`
 
+#### 3. Simple Covert Channel Traffic Generator
 Of course, one could also use `dd` together with `/dev/random` as a source of randomness to create a file with random bits and use this file instead of `/etc/hosts`.
 Similarly, the [Manipulated Message Ordering](http://ih-patterns.blogspot.de/p/p10-pdu-order-pattern.html) pattern can be represented using `./seq_encode /etc/hosts 256 2` instead of `./iat_encode 500 1000`. Check the [documentation](https://github.com/cdpxe/CCEAP/tree/master/documentation) for details.
 
