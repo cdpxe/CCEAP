@@ -16,8 +16,9 @@ Please send requests and feedback to the author: Steffen Wendzel, [www.wendzel.d
 The *Covert Channel Educational Analysis Protocol* (CCEAP) is a network protocol designed for teaching covert channels to professionals and students. It can also be used a simple covert channel traffic generator. For an introduction on network covert channels (network steganography), please have a look at [this publication](https://www.researchgate.net/profile/Steffen_Wendzel/publication/263773592_Hidden_and_Uncontrolled_-_On_the_Emergence_of_Network_Steganographic_Threats/links/53eb38eb0cf2dc24b3cea87a.pdf).
 
 **Videos:**
-- [Quick 4 min Introduction](https://www.youtube.com/watch?v=LoPf06rMXWQ&t=5s) into Information Hiding in Computer Networks
-- [30 min Introduction into Network Steganography and Hiding Patterns](https://www.youtube.com/watch?v=XO6737KLaTg) -- the foundation of CCEAP
+- [Quick 4 min introduction](https://www.youtube.com/watch?v=LoPf06rMXWQ&t=5s) into information hiding in computer networks
+- [30 min introduction into network steganography and hiding patterns](https://www.youtube.com/watch?v=XO6737KLaTg) -- the foundation of CCEAP
+- [my free university-level online course, including a full chapter on hiding patterns](https://github.com/cdpxe/Network-Covert-Channels-A-University-level-Course/) -- for all who really want to understand the topic
 
 ### CCEAP in one Paragraph
 
