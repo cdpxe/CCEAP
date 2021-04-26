@@ -7,7 +7,7 @@
  * vulnerabilities in a single communication protocol.
  *
  * Copyright (C) 2016-2019 Steffen Wendzel, steffen (at) wendzel (dot) de
- *                    http://www.wendzel.de
+ *                    https://www.wendzel.de
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

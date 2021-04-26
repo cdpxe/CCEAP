@@ -1,6 +1,6 @@
 CHANGELOG for the CCEAP tool
 
-current : 2019-08-05
+v. 0.6.2 : 2021-04-26
  * Improved welcome message and add -q for the client, too.
 
 v. 0.6.1 : 2019-04-21 (Easter)

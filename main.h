@@ -6,7 +6,7 @@
  * for students. The tool demonstrates several network covert channel
  * vulnerabilities in a single communication protocol.
  *
- * Copyright (C) 2016-2019 Steffen Wendzel, steffen (at) wendzel (dot) de
+ * Copyright (C) 2016-2021 Steffen Wendzel, steffen (at) wendzel (dot) de
  *                    http://www.wendzel.de
  *
  * This program is free software: you can redistribute it and/or modify
@@ -48,8 +48,8 @@
 #include <math.h>
 #include <time.h>
 
-#define CCEAP_VER	"0.6.1+"
-#define CCEAP_AUTHOR	"Steffen Wendzel, www.wendzel.de"
+#define CCEAP_VER	"0.6.2"
+#define CCEAP_AUTHOR	"Steffen Wendzel, https://www.wendzel.de"
 #define ERR_EXIT	2
 #define OK_EXIT		0
 
