@@ -191,7 +191,9 @@ With the inofficially provided tool `iat_encode` (encodes an input file into tim
 
 Similarly, the [Manipulated Message Ordering](http://ih-patterns.blogspot.de/p/p10-pdu-order-pattern.html) pattern can be represented using `./seq_encode [input-file] 256 2` with parameter `-s` (instead of `./iat_encode` with parameter `-t`). The value `256` tells the tool the maximum allowed sequence number (in CCEAP, the sequence number field has 8 bits, so we need to use all sequence numbers *mod 256*) and the `2` represents the number of sequence numbers to be swapped (only the value 2 is supported). In other words, there is no need to alter any of these two numbers.
 
-However, *both tools are not officially part of CCEAP and they are not necessary to realize these patterns with CCEAP, i.e. they are just additional tools to make it a bit easier to use CCEAP*.
+**Hint:** If you want to apply a pseudo-random sequence, you can also use the tool `rand_seq` instead of `seq_encode`.
+
+However, *`iat_encode`, `seq_encode` and `rand_seq` are not officially part of CCEAP and they are not necessary to realize these patterns with CCEAP, i.e. they are just additional tools to make it a bit easier to use CCEAP*.
 
 ## Further Reading
 
