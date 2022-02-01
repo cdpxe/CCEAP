@@ -206,7 +206,7 @@ The following subsections provide a list of papers which are directly linked or 
 **Publications *using* CCEAP:**
 
 - S. Zillien, S. Wendzel: *ε-κalibur: Weaknesses of two popular covert channel detection methods and a remedy*, under review.
-- S. Wendzel: *Protocol-independent Detection of “Messaging Ordering” Network Covert Channels*, in Proc. ARES 2019, CUING Workshop, ACM, 2019.
+- S. Wendzel: *[Protocol-independent Detection of “Messaging Ordering” Network Covert Channels](https://doi.org/10.1145/3339252.3341477)*, in Proc. ARES 2019, CUING Workshop, ACM, 2019.
 - Send me an e-mail in case you used CCEAP for your research and I will add your research here!
 
 **Publications on Information Hiding Patterns:**
