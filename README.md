@@ -20,7 +20,7 @@ Now, let us create a simple covert timing channel that we use to transfer the fi
 
 #### 3. Simple Covert Channel Traffic Generator
 Of course, one could also use `dd` together with `/dev/random` as a source of randomness to create a file with random bits and use this file instead of `/etc/hosts`.
-Similarly, the [Manipulated Message Ordering](http://ih-patterns.blogspot.de/p/p10-pdu-order-pattern.html) pattern can be represented using `./seq_encode /etc/hosts 256 2` instead of `./iat_encode 500 1000`. Check the [documentation](https://github.com/cdpxe/CCEAP/tree/master/documentation) for details.
+Similarly, the [Manipulated Message Ordering](http://ih-patterns.blogspot.de/p/p10-pdu-order-pattern.html) pattern can be represented using `./seq_encode /etc/hosts 256 2` instead of `./iat_encode /etc/hosts 500 1000`. Check the [documentation](https://github.com/cdpxe/CCEAP/tree/master/documentation) for details.
 
 More parameters of `client` can be obtained by running `./client -h`.
 
