@@ -19,6 +19,7 @@ The *Covert Channel Educational Analysis Protocol* (CCEAP) is a network protocol
 - [Quick 4 min introduction](https://www.youtube.com/watch?v=LoPf06rMXWQ&t=5s) into information hiding in computer networks
 - [30 min introduction into network steganography and hiding patterns](https://www.youtube.com/watch?v=XO6737KLaTg) -- the foundation of CCEAP
 - [my free university-level online course, including a full chapter on hiding patterns](https://github.com/cdpxe/Network-Covert-Channels-A-University-level-Course/) -- for all who really want to understand the topic
+- [our poster on the hiding patterns history] (EICC'22)
 
 ### CCEAP in one Paragraph
 
