@@ -4,7 +4,11 @@ The *Covert Channel Educational Analysis Protocol* (CCEAP) is a simple network p
 
 The protocol is explicitly vulnerable against several [hiding patterns](http://ih-patterns.blogspot.de/p/introduction.html), i.e. patterns that represent hiding methods (steganographic methods that create covert channels, see [here](https://github.com/cdpxe/Network-Covert-Channels-A-University-level-Course/) for my GitHub online class on network steganography/covert channels). The protocol's structure is simple and self-explanatory and its implementation is kept at a minimum level of code lines to make it especially accessible to students. There is also a [documentation](https://github.com/cdpxe/CCEAP/tree/master/documentation) and an *academic publication* (published under the umbrella of ACM CCS 2016, download link is also in the documentation) available.
 
-Please send requests and feedback to the author: Steffen Wendzel, [www.wendzel.de](http://www.wendzel.de) (wendzel (at) hs-worms (dot) de).
+Please send requests and feedback to the author: Steffen Wendzel, [www.wendzel.de](https://www.wendzel.de) (wendzel (at) hs-worms (dot) de).
+
+#### Original Publication
+
+Steffen Wendzel, Wojciech Mazurczyk: [Poster: An Educational Network Protocol for Covert Channel Analysis Using Patterns](https://doi.org/10.1145/2976749.2989037), in Proceedings of the 2016 ACM SIGSAC Conference on Computer and Communications Security (CCS 2016). ACM, New York, NY, USA, pp 1739–1741, DOI: [10.1145/2976749.2989037](https://doi.org/10.1145/2976749.2989037).
 
 ## Kickstart - a few Examples:
 
