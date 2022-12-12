@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Wendzel"
+  given-names: "Steffen"
+  orcid: "https://orcid.org/0000-0002-1913-5912"
+- family-names: "Mazurczyk"
+  given-names: "Wojciech"
+title: "Poster: An Educational Network Protocol for Covert Channel Analysis Using Patterns"
+doi: "10.1145/2976749.2989037"
+version: 1.0.0
+date-released: 2016-10-01
+url: "https://github.com/cdpxe/CCEAP"
+preferred-citation:
+  type: conference-paper
+  authors:
+  - family-names: "Wendzel"
+    given-names: "Steffen"
+    orcid: "https://orcid.org/0000-0002-1913-5912"
+- family-names: "Mazurczyk"
+  given-names: "Wojciech"
+  journal: "Proceedings of the 2016 ACM SIGSAC Conference on Computer and Communications Security (CCS 2016)"
+  start: 1739 # First page number
+  end: 1741 # Last page number
+  title: "Poster: An Educational Network Protocol for Covert Channel Analysis Using Patterns"
+  url: "https://github.com/cdpxe/CCEAP"
+  doi: "10.1145/2976749.2989037"
+  year: 2012
+  publisher: "ACM"
