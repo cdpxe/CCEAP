@@ -17,8 +17,8 @@ preferred-citation:
   - family-names: "Wendzel"
     given-names: "Steffen"
     orcid: "https://orcid.org/0000-0002-1913-5912"
-- family-names: "Mazurczyk"
-  given-names: "Wojciech"
+  - family-names: "Mazurczyk"
+    given-names: "Wojciech"
   journal: "Proceedings of the 2016 ACM SIGSAC Conference on Computer and Communications Security (CCS 2016)"
   start: 1739 # First page number
   end: 1741 # Last page number
