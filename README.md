@@ -6,9 +6,9 @@ The protocol is explicitly vulnerable against several [hiding patterns](http://i
 
 Please send requests and feedback to the author: Steffen Wendzel, [www.wendzel.de](https://www.wendzel.de) (wendzel (at) hs-worms (dot) de).
 
-#### Original Publication
+### How to Cite this Work?
 
-Steffen Wendzel, Wojciech Mazurczyk: [Poster: An Educational Network Protocol for Covert Channel Analysis Using Patterns](https://doi.org/10.1145/2976749.2989037), in Proceedings of the 2016 ACM SIGSAC Conference on Computer and Communications Security (CCS 2016). ACM, New York, NY, USA, pp 1739–1741, DOI: [10.1145/2976749.2989037](https://doi.org/10.1145/2976749.2989037).
+Steffen Wendzel, Wojciech Mazurczyk: [Poster: An Educational Network Protocol for Covert Channel Analysis Using Patterns](https://doi.org/10.1145/2976749.2989037), in Proc. 2016 ACM SIGSAC Conference on Computer and Communications Security (CCS 2016). ACM, New York, NY, USA, pp. 1739–1741, DOI: [10.1145/2976749.2989037](https://doi.org/10.1145/2976749.2989037).
 
 ## Kickstart - a few Examples:
 
