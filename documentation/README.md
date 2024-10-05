@@ -8,7 +8,7 @@
 
 - S. Wendzel and W. Mazurczyk: [An Educational Network Protocol for Covert Channel Analysis Using Patterns (poster)](https://dl.acm.org/authorize?N682641), in Proc. ACM Conference on Computer and Communications Security (CCS), pp. 1739-1741, ACM, 2016. You can also download the conference poster [here](https://www.researchgate.net/publication/309284322_Poster_file_for_S_Wendzel_and_W_Mazurczyk_An_Educational_Network_Protocol_for_Covert_Channel_Analysis_Using_Patterns_poster_in_Proc_ACM_CCS_2016), it summarizes the content of the actual paper.
 
-Please send requests and feedback to the author: Steffen Wendzel, [www.wendzel.de](http://www.wendzel.de) (steffen (at) wendzel (dot) de). Research on covert channel teaching is currently performed by [Steffen Wendzel and Wojciech Mazurczyk](http://ih-patterns.blogspot.de/p/authorscontact.html).
+Please send requests and feedback to the author: Steffen Wendzel, [www.wendzel.de](http://www.wendzel.de) (steffen (at) wendzel (dot) de).
 
 ## Introduction
 
@@ -23,7 +23,7 @@ The *Covert Channel Educational Analysis Protocol* (CCEAP) is a network protocol
 
 ### CCEAP in one Paragraph
 
-CCEAP implements a network protocol. The protocol is explicitly vulnerable against several so-called [hiding patterns](http://ih-patterns.blogspot.de/p/introduction.html). Hiding patterns represent the core ideas of how secret data can be hidden in network transmissions. The core idea is that CCEAP allows students to model the protocol structure in a way that it represents covert channels. In other words, CCEAP can be used to teach students covert channel techniques in an easy manner.
+CCEAP implements a network protocol. The protocol is explicitly vulnerable against several so-called [hiding patterns](https://patterns.ztt.hs-worms.de/NIHPattern/). Hiding patterns represent the core ideas of how secret data can be hidden in network transmissions. The core idea is that CCEAP allows students to model the protocol structure in a way that it represents covert channels. In other words, CCEAP can be used to teach students covert channel techniques in an easy manner.
 
 ### Why use CCEAP?
 
@@ -48,7 +48,7 @@ The educational process is split into two parts. First, a lecturer explains the 
 The lecturer is required to introduce
 
 - the CCEAP protocol (see below), and
-- hiding patterns as they are described on our [project website](http://ih-patterns.blogspot.de/p/introduction.html) that also points to several of our recent publications in which we introduce the topic.
+- hiding patterns as they are described on our [project website](https://patterns.ztt.hs-worms.de/) that also points to several of our recent publications in which we introduce the topic.
 
    **Please Note:** Currently, CCEAP supports most of the storage channels patterns as well as some timing channel patterns. However, a few hiding patterns as well covert channels for OSI layers 1-2 are not supported. For a detailed explanation of these terms, please see our book [Information Hiding in Communication Networks](http://eu.wiley.com/WileyCDA/WileyTitle/productCd-1118861698.html), Chapters 2 and 3.
 
@@ -56,7 +56,7 @@ The lecturer is required to introduce
 
 In the exercises, students try to create covert channels **or** they try to determine the type (pattern) of a given covert channel. Therefore, the lecturer can perform one of two types of exercises:
 
-- The lecturer can ask the *students to establish a hidden communication that represents a given pattern*. The pattern can be one of the known patterns of the available [pattern collection](http://ih-patterns.blogspot.de/p/test.html), e.g. [Value Modulation](http://ih-patterns.blogspot.de/p/references-1-s.html) or [Reserved/Unused](http://ih-patterns.blogspot.de/p/blog-page_13.html). Therefore, the students need to find out how to create a covert channel for the particular pattern using the CCEAP protocol by analyzing the protocol structure and the `client` tool's command line parameters.
+- The lecturer can ask the *students to establish a hidden communication that represents a given pattern*. The pattern can be one of the known patterns of the available [pattern collection](https://patterns.ztt.hs-worms.de/NIHPattern/), e.g. [Value Modulation](https://patterns.ztt.hs-worms.de/NIHPattern/) or [Reserved/Unused](https://patterns.ztt.hs-worms.de/NIHPattern/). Therefore, the students need to find out how to create a covert channel for the particular pattern using the CCEAP protocol by analyzing the protocol structure and the `client` tool's command line parameters.
 - Alternatively, the lecturer can ask the students to *determine the hiding pattern for a given traffic recording or for given tool parameters* that were used to run the client.
 
 **Sample exercises** can be found in the CCEAP repository under the following URL [https://github.com/cdpxe/CCEAP/tree/master/sample_exercises](https://github.com/cdpxe/CCEAP/tree/master/sample_exercises). Also, cf. section *Example Walk-through for an Exercise* in *this file* for an explanation of how exercises are performed.
@@ -105,7 +105,7 @@ All actions can be performed over the network or on the local host. The easiest 
 
 #### Example Walk-through for an Exercise
 
-Sample exercises (incl. solutions) are available [here](https://github.com/cdpxe/CCEAP/tree/master/sample_exercises). However, for now let us assume that the exercise given to the students was to create a covert channel that uses the [Reserved/Unused](http://ih-patterns.blogspot.de/p/blog-page_13.html) pattern. The students look up the pattern description, which tells:
+Sample exercises (incl. solutions) are available [here](https://github.com/cdpxe/CCEAP/tree/master/sample_exercises). However, for now let us assume that the exercise given to the students was to create a covert channel that uses the [Reserved/Unused](https://patterns.ztt.hs-worms.de/NIHPattern/) pattern. The students look up the pattern description, which tells:
 
 *The covert channel encodes hidden data into a reserved or unused header/PDU element.*
 
@@ -165,32 +165,32 @@ Currently, the below listed hiding patterns are supported by CCEAP.
 
 Storage Channel Patterns:
 
-* [Size Modulation](http://ih-patterns.blogspot.de/p/p1-size-modulation-pattern.html)
-* [Sequence Modulation](http://ih-patterns.blogspot.de/p/blog-page.html)
-* [Add Redundancy](http://ih-patterns.blogspot.de/p/p3-add-redundancy-pattern.html)
-* [Random Value](http://ih-patterns.blogspot.de/p/p5.html)
-* [Value Modulation](http://ih-patterns.blogspot.de/p/references-1-s.html)
-* [Reserved/Unused](http://ih-patterns.blogspot.de/p/blog-page_13.html)
+* Size Modulation
+* Sequence Modulation
+* Add Redundancy
+* Random Value
+* Value Modulation
+* Reserved/Unused
 
 Timing Channel Patterns:
 
-* [Artificial Message/Packet Loss (a.k.a. PDU Corruption)](http://ih-patterns.blogspot.de/p/p4-pdu-corruptionloss-pattern.html)
-* [Artificial Retransmission](http://ih-patterns.blogspot.de/p/p11-re-transmission-pattern.html)
-* [Manipulated Message Ordering](http://ih-patterns.blogspot.de/p/p10-pdu-order-pattern.html)
-* [Inter-arrival Time](http://ih-patterns.blogspot.de/p/blog-page_40.html)
-* [Rate/Throughput](http://ih-patterns.blogspot.de/p/p9.html), indirectly supported via the *Interpacket Time* Pattern
+* Artificial Message/Packet Loss (a.k.a. PDU Corruption)
+* Artificial Retransmission
+* Manipulated Message Ordering
+* Inter-arrival Time
+* [Rate/Throughput, indirectly supported via the *Interpacket Time* Pattern
 
 An explanation of how each pattern is addressed by CCEAP can moreover be found in our CCS'16 poster (Wendzel and Mazurczyk, 2016), cf. *Further Reading* at the end of the document.
 
 ## Using CCEAP as a Traffic Generator
 
-The tool can be used easily as a traffic generator, also when the semantics of the actual protocol are not required. For instance, the packet size can be manipulated to simulate packet-size covert channels ([Size Modulation](http://ih-patterns.blogspot.de/p/p1-size-modulation-pattern.html) pattern). In fact, the author used CCEAP to generate traffic for some of his own papers.
+The tool can be used easily as a traffic generator, also when the semantics of the actual protocol are not required. For instance, the packet size can be manipulated to simulate packet-size covert channels (Size Modulation pattern). In fact, the author used CCEAP to generate traffic for some of his own papers.
 
 #### Inofficial add-ons to automatically encode files into inter-arrival times / sequence numbers
 
-With the inofficially provided tool `iat_encode` (encodes an input file into timing values), one can easily create timing channels (running `./client -t ´./iat_encode [input-file] [low-time] [high-time]´`, where the time values must be provided in units of ms. This would then represent the [Inter-arrival Time](http://ih-patterns.blogspot.de/p/blog-page_40.html) pattern.
+With the inofficially provided tool `iat_encode` (encodes an input file into timing values), one can easily create timing channels (running `./client -t ´./iat_encode [input-file] [low-time] [high-time]´`, where the time values must be provided in units of ms. This would then represent the Inter-arrival Time pattern.
 
-Similarly, the [Manipulated Message Ordering](http://ih-patterns.blogspot.de/p/p10-pdu-order-pattern.html) pattern can be represented using `./seq_encode [input-file] 256 2` with parameter `-s` (instead of `./iat_encode` with parameter `-t`). The value `256` tells the tool the maximum allowed sequence number (in CCEAP, the sequence number field has 8 bits, so we need to use all sequence numbers *mod 256*) and the `2` represents the number of sequence numbers to be swapped (only the value 2 is supported). In other words, there is no need to alter any of these two numbers.
+Similarly, the Manipulated Message Ordering pattern can be represented using `./seq_encode [input-file] 256 2` with parameter `-s` (instead of `./iat_encode` with parameter `-t`). The value `256` tells the tool the maximum allowed sequence number (in CCEAP, the sequence number field has 8 bits, so we need to use all sequence numbers *mod 256*) and the `2` represents the number of sequence numbers to be swapped (only the value 2 is supported). In other words, there is no need to alter any of these two numbers.
 
 **Hint:** If you want to apply a pseudo-random sequence, you can also use the tool `rand_seq` instead of `seq_encode`.
 
@@ -231,7 +231,7 @@ The following subsections provide a list of papers which are directly linked or 
 
 **Websites:**
 
-- [Network Information Hiding Patterns Project](http://ih-patterns.blogspot.de/)
+- [Network Information Hiding Patterns Project](https://patterns.ztt.hs-worms.de/NIHPattern/)
 - Europol EC3 initiative [Criminal Use of Information Hiding](http://cuing.org/) (CUING)
 - TU Vienna [Network Covert Channel Lab](https://www.nt.tuwien.ac.at/research/communication-networks/network-security-laboratory/#nsII), cf. T. Zseby, F. Iglesias Vázquez, V. Bernhardt, D. Frkat, R. Annessi: [A Network Steganography Lab on Detecting TCP/IP Covert Channels](http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7405338), IEEE Transactions on Education, IEEE; 2016.
 
