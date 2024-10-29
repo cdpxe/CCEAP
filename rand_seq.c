@@ -1,7 +1,7 @@
 /* Very simple tool to generate randomized sequence numbers for testing
  * purposes.
  * License: GPLv3, see `LICENSE' file.
- * (C) 2019 Steffen Wendzel <wendzel (at) hs-worms (dot) de>
+ * (C) 2019 Steffen Wendzel, www.wendzel.de
  *
  * This script can be used as a parameter for the CCEAP client.
  */
