@@ -206,7 +206,6 @@ The following subsections provide a list of papers which are directly linked or 
 
 **Publications *using* CCEAP:**
 
-- S. Wendzel, T. Schmidbauer, S. Zillien, J. Keller: *DYST (Did You See That?): An Amplified Covert Channel That Points To Previously Seen Data*, IEEE Transactions on Dependable and Secure Computing (TDSC), Vol. 22(1).  DOI: [10.1109/TDSC.2024.3410679](https://doi.org/https://doi.org/10.1109/TDSC.2024.3410679), 2025.
 - S. Zillien, S. Wendzel: *Weaknesses of popular and recent covert channel detection methods and a remedy*, IEEE Transactions on Dependable and Secure Computing (TDSC). 20/6:5156–5167, DOI: [10.1109/TDSC.2023.3241451](https://doi.org/10.1109/TDSC.2023.3241451), 2023.
 - S. Wendzel: *[Protocol-independent Detection of “Messaging Ordering” Network Covert Channels](https://doi.org/10.1145/3339252.3341477)*, in Proc. ARES 2019, CUING Workshop, ACM, 2019.
 - Send me an e-mail in case you used CCEAP for your research and I will add your research here!
