@@ -23,7 +23,7 @@ The *Covert Channel Educational Analysis Protocol* (CCEAP) is a network protocol
 
 ### CCEAP in one Paragraph
 
-CCEAP implements a network protocol. The protocol is explicitly vulnerable against several so-called [hiding patterns](https://patterns.ztt.hs-worms.de/NIHPattern/). Hiding patterns represent the core ideas of how secret data can be hidden in network transmissions. The core idea is that CCEAP allows students to model the protocol structure in a way that it represents covert channels. In other words, CCEAP can be used to teach students covert channel techniques in an easy manner.
+CCEAP implements a network protocol. The protocol is explicitly vulnerable against several so-called [hiding patterns](https://patterns.omi.uni-ulm.de/NIHPattern/). Hiding patterns represent the core ideas of how secret data can be hidden in network transmissions. The core idea is that CCEAP allows students to model the protocol structure in a way that it represents covert channels. In other words, CCEAP can be used to teach students covert channel techniques in an easy manner.
 
 ### Why use CCEAP?
 
@@ -48,7 +48,7 @@ The educational process is split into two parts. First, a lecturer explains the 
 The lecturer is required to introduce
 
 - the CCEAP protocol (see below), and
-- hiding patterns as they are described on our [project website](https://patterns.ztt.hs-worms.de/) that also points to several of our recent publications in which we introduce the topic.
+- hiding patterns as they are described on our [project website](https://patterns.omi.uni-ulm.de/) that also points to several of our recent publications in which we introduce the topic.
 
    **Please Note:** Currently, CCEAP supports most of the storage channels patterns as well as some timing channel patterns. However, a few hiding patterns as well covert channels for OSI layers 1-2 are not supported. For a detailed explanation of these terms, please see our book [Information Hiding in Communication Networks](http://eu.wiley.com/WileyCDA/WileyTitle/productCd-1118861698.html), Chapters 2 and 3.
 
@@ -56,7 +56,7 @@ The lecturer is required to introduce
 
 In the exercises, students try to create covert channels **or** they try to determine the type (pattern) of a given covert channel. Therefore, the lecturer can perform one of two types of exercises:
 
-- The lecturer can ask the *students to establish a hidden communication that represents a given pattern*. The pattern can be one of the known patterns of the available [pattern collection](https://patterns.ztt.hs-worms.de/NIHPattern/), e.g. [Value Modulation](https://patterns.ztt.hs-worms.de/NIHPattern/) or [Reserved/Unused](https://patterns.ztt.hs-worms.de/NIHPattern/). Therefore, the students need to find out how to create a covert channel for the particular pattern using the CCEAP protocol by analyzing the protocol structure and the `client` tool's command line parameters.
+- The lecturer can ask the *students to establish a hidden communication that represents a given pattern*. The pattern can be one of the known patterns of the available [pattern collection](https://patterns.omi.uni-ulm.de/NIHPattern/), e.g. [Value Modulation](https://patterns.omi.uni-ulm.de/NIHPattern/) or [Reserved/Unused](https://patterns.omi.uni-ulm.de/NIHPattern/). Therefore, the students need to find out how to create a covert channel for the particular pattern using the CCEAP protocol by analyzing the protocol structure and the `client` tool's command line parameters.
 - Alternatively, the lecturer can ask the students to *determine the hiding pattern for a given traffic recording or for given tool parameters* that were used to run the client.
 
 **Sample exercises** can be found in the CCEAP repository under the following URL [https://github.com/cdpxe/CCEAP/tree/master/sample_exercises](https://github.com/cdpxe/CCEAP/tree/master/sample_exercises). Also, cf. section *Example Walk-through for an Exercise* in *this file* for an explanation of how exercises are performed.
@@ -105,7 +105,7 @@ All actions can be performed over the network or on the local host. The easiest 
 
 #### Example Walk-through for an Exercise
 
-Sample exercises (incl. solutions) are available [here](https://github.com/cdpxe/CCEAP/tree/master/sample_exercises). However, for now let us assume that the exercise given to the students was to create a covert channel that uses the [Reserved/Unused](https://patterns.ztt.hs-worms.de/NIHPattern/) pattern. The students look up the pattern description, which tells:
+Sample exercises (incl. solutions) are available [here](https://github.com/cdpxe/CCEAP/tree/master/sample_exercises). However, for now let us assume that the exercise given to the students was to create a covert channel that uses the [Reserved/Unused](https://patterns.omi.uni-ulm.de/NIHPattern/) pattern. The students look up the pattern description, which tells:
 
 *The covert channel encodes hidden data into a reserved or unused header/PDU element.*
 
@@ -212,7 +212,13 @@ The following subsections provide a list of papers which are directly linked or 
 
 **Publications on Information Hiding Patterns:**
 
+Key papers:
+
+- S. Wendzel, L. Caviglione, W. Mazurczyk, A. Mileva, J. Dittmann, C. Krätzer, K. Lamshöft, C. Vielhauer, L. Hartmann, J. Keller, T. Neubert, S. Zillien: [A Generic Taxonomy for Steganography Methods](https://dx.doi.org/10.1145/3729165), ACM Computing Surveys, 2025.
 - S. Wendzel, S. Zander, B. Fechner, C. Herdin: [Pattern-based Survey and Categorization of Network Covert Channel Techniques](https://dl.acm.org/citation.cfm?doid=2737799.2684195), ACM Computing Surveys, ACM, 2015. An early version of this document is available for free: [download](https://www.researchgate.net/publication/263048788_Pattern-Based_Survey_and_Categorization_of_Network_Covert_Channel_Techniques?ev=prf_pub).
+
+Additional publications:
+
 - W. Mazurczyk, S. Wendzel, K. Cabaj: [Towards Deriving Insights into Data Hiding Methods Using Pattern-based Approach](https://www.researchgate.net/publication/325795400_Towards_Deriving_Insights_into_Data_Hiding_Methods_Using_Pattern-based_Approach), in Proc. Second International Workshop on Criminal Use of Information Hiding (CUING 2018) at ARES, pp. 10:1-10:10, ACM, 2018.
 - Chapter 3 of: W. Mazurczyk, S. Wendzel, S. Zander, A. Houmansadr, K. Szczypiorski: [Information Hiding in Communication Networks](http://eu.wiley.com/WileyCDA/WileyTitle/productCd-1118861698.html), Wiley IEEE-Press, 2016.
 - S. Wendzel, C. Palmer: [Creativity in Mind: Evaluating and Maintaining Advances in Network Steganographic Research](http://www.jucs.org/jucs_21_12/creativity_in_mind_evaluating), Journal of Universal Computer Science (J.UCS), 2015.
@@ -231,7 +237,6 @@ The following subsections provide a list of papers which are directly linked or 
 
 **Websites:**
 
-- [Network Information Hiding Patterns Project](https://patterns.ztt.hs-worms.de/NIHPattern/)
-- Europol EC3 initiative [Criminal Use of Information Hiding](http://cuing.org/) (CUING)
+- [Network Information Hiding Patterns Project](https://patterns.omi.uni-ulm.de/NIHPattern/)
 - TU Vienna [Network Covert Channel Lab](https://www.nt.tuwien.ac.at/research/communication-networks/network-security-laboratory/#nsII), cf. T. Zseby, F. Iglesias Vázquez, V. Bernhardt, D. Frkat, R. Annessi: [A Network Steganography Lab on Detecting TCP/IP Covert Channels](http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7405338), IEEE Transactions on Education, IEEE; 2016.
 
